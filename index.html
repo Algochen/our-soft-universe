@@ -155,10 +155,13 @@
       background: rgba(255,255,255,.6);
     }
     .media img{width:100%;height:320px;object-fit:cover;display:block}
+
+    /* 全局 video 保留黑底（你原来的） */
+    video{width:100%;display:block;background:#000}
+
     .media .cap{padding:10px 12px}
     .capT{font-weight:950}
     .capS{font-size:12px;color:var(--muted);margin-top:4px}
-    video{width:100%;display:block;background:#000}
 
     .floatLayer{pointer-events:none;position:fixed;inset:0;z-index:999;overflow:hidden}
     .heart{
@@ -970,7 +973,7 @@
     .couponT{font-weight:950}
     .couponS{margin-top:6px;color:var(--muted);font-size:12px;line-height:1.7}
 
-    /* GIF corner video */
+    /* ✅ GIF corner video */
     .gifCorner{
       position:fixed;
       right:14px;
@@ -989,6 +992,8 @@
       height:140px;
       object-fit:cover;
       display:block;
+      /* ✅ 关键：微信不渲染首帧时，不要显示黑底 */
+      background: transparent;
     }
     .gifCorner .gcap{
       padding:8px 10px;
@@ -1004,7 +1009,20 @@
 
 <body>
   <div class="gifCorner">
-    <video src="GIF.mp4" autoplay muted loop playsinline></video>
+    <video
+      id="cornerVideo"
+      src="GIF.mp4"
+      autoplay
+      muted
+      loop
+      playsinline
+      webkit-playsinline
+      x5-playsinline
+      x5-video-player-type="h5"
+      x5-video-player-fullscreen="false"
+      preload="auto"
+      poster="corner_poster.jpg"
+    ></video>
     <div class="gcap">我最可爱的宝宝。</div>
   </div>
 
@@ -1596,6 +1614,18 @@
   </div>
 
   <script>
+    // ✅ 微信/移动端：右上角视频自动播放兜底（避免黑块）
+    function tryPlayCornerVideo(){
+      const v = document.getElementById("cornerVideo");
+      if(!v) return;
+      v.muted = true;
+      const p = v.play();
+      if(p && p.catch) p.catch(()=>{});
+    }
+    document.addEventListener("WeixinJSBridgeReady", tryPlayCornerVideo, false);
+    document.addEventListener("DOMContentLoaded", tryPlayCornerVideo);
+    document.addEventListener("touchstart", tryPlayCornerVideo, { once:true });
+
     const LOVE_START = new Date("2025-11-15T00:00:00");
     const BIRTHDAY_MONTH = 3;
     const BIRTHDAY_DAY = 19;
@@ -2790,7 +2820,7 @@
       }
     }
 
-    loadVolume();         // ✅ 先应用音量
+    loadVolume();
     loadSong(songIdx, false);
 
     btnPrev.addEventListener("click", ()=>{

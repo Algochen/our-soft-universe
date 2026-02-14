@@ -1,0 +1,3003 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>情人节限定 · 晓玲的小世界</title>
+  <style>
+    :root{
+      --bg1:#fff1f2;
+      --bg2:#fffbeb;
+      --card:rgba(255,255,255,.72);
+      --ring:rgba(15,23,42,.08);
+      --text:#0f172a;
+      --muted:#475569;
+      --rose:#e11d48;
+      --shadow:0 10px 30px rgba(15,23,42,.08);
+      --r:22px;
+      --r2:28px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, "PingFang SC","Microsoft YaHei", Segoe UI, Roboto, Arial;
+      color:var(--text);
+      background: linear-gradient(180deg,var(--bg1),var(--bg2),#fff);
+      min-height:100vh;
+    }
+    .wrap{max-width:1100px;margin:0 auto;padding:20px 16px 60px}
+    .hero{
+      position:relative;
+      overflow:hidden;
+      border-radius: var(--r2);
+      background: rgba(255,255,255,.70);
+      box-shadow: var(--shadow);
+      border:1px solid var(--ring);
+      padding:22px;
+      backdrop-filter: blur(10px);
+    }
+    .tag{
+      display:inline-flex;align-items:center;gap:8px;
+      font-size:12px;font-weight:700;
+      color: #9f1239;
+      background: rgba(253,232,232,.8);
+      border:1px solid rgba(251,113,133,.25);
+      padding:6px 10px;border-radius:999px;
+    }
+    .h1{margin:12px 0 6px;font-size:28px;letter-spacing:-.02em}
+    .h1 .love{color:var(--rose)}
+    .p{margin:0;color:var(--muted);font-size:14px;line-height:1.7;max-width:760px}
+    .heroTop{display:flex;gap:14px;justify-content:space-between;align-items:flex-start;flex-wrap:wrap}
+    .btnRow{display:flex;gap:10px;flex-wrap:wrap}
+    button{
+      border:0;cursor:pointer;
+      border-radius: 18px;
+      padding:10px 14px;
+      font-weight:800;
+      font-size:14px;
+      box-shadow: 0 8px 18px rgba(15,23,42,.08);
+      border:1px solid rgba(15,23,42,.06);
+      transition: transform .06s ease, filter .2s ease;
+    }
+    button:active{transform: scale(.98)}
+    button:disabled{opacity:.55;cursor:not-allowed}
+    .btnPrimary{background: var(--rose); color:#fff}
+    .btnSoft{background: rgba(255,255,255,.7); color:var(--text)}
+    .btnSoft:hover{filter:brightness(1.03)}
+    .cards3{margin-top:16px;display:grid;gap:12px;grid-template-columns: repeat(3,minmax(0,1fr))}
+    @media (max-width:900px){.cards3{grid-template-columns:1fr}}
+    .mini{
+      border-radius: var(--r);
+      padding:14px;
+      background: linear-gradient(135deg, rgba(253,232,232,.75), rgba(255,237,213,.75));
+      border:1px solid rgba(251,113,133,.18);
+    }
+    .miniTitle{font-weight:900;font-size:14px;display:flex;align-items:center;gap:8px}
+    .miniSub{font-size:12px;color:var(--muted);margin-top:6px}
+
+    .tabs{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0 0}
+    .tab{
+      background: rgba(255,255,255,.7);
+      border:1px solid rgba(15,23,42,.06);
+      padding:10px 14px;
+      border-radius: 18px;
+      font-weight:900;
+      color: var(--text);
+      box-shadow: 0 8px 18px rgba(15,23,42,.06);
+    }
+    .tab.active{background: var(--rose); color:#fff}
+    .grid{margin-top:16px;display:grid;gap:12px}
+    .card{
+      border-radius: var(--r2);
+      background: var(--card);
+      border:1px solid var(--ring);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      backdrop-filter: blur(10px);
+    }
+    .cardInner{padding:18px}
+    .cardHead{display:flex;gap:12px;align-items:flex-start}
+    .icon{
+      width:44px;height:44px;border-radius:16px;
+      background: rgba(253,232,232,.9);
+      border:1px solid rgba(251,113,133,.20);
+      display:flex;align-items:center;justify-content:center;
+      font-size:20px;
+      flex: 0 0 auto;
+    }
+    .ctitle{font-weight:950;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+    .csub{color:var(--muted);font-size:13px;margin-top:4px}
+    .pillRow{display:flex;gap:8px;flex-wrap:wrap;justify-content:space-between;margin-top:10px}
+    .pill{
+      display:inline-flex;align-items:center;gap:6px;
+      font-size:12px;font-weight:800;
+      color:#9f1239;
+      background: rgba(253,232,232,.75);
+      border:1px solid rgba(251,113,133,.18);
+      padding:6px 10px;border-radius:999px;
+    }
+
+    .segGrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:12px}
+    @media (max-width:700px){.segGrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    .seg{
+      border-radius:18px;
+      background: rgba(255,255,255,.72);
+      border:1px solid rgba(15,23,42,.06);
+      padding:12px;
+      text-align:center;
+    }
+    .segNum{font-size:26px;font-weight:1000;font-variant-numeric: tabular-nums}
+    .segLab{margin-top:4px;font-size:12px;color:var(--muted);font-weight:800}
+
+    .softBox{
+      border-radius: var(--r);
+      background: linear-gradient(135deg, rgba(253,232,232,.7), rgba(255,237,213,.7));
+      border:1px solid rgba(251,113,133,.18);
+      padding:14px;
+    }
+    .softTitle{font-weight:950}
+    .softText{margin-top:8px;color:var(--text);font-size:14px;line-height:1.75}
+    .row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    @media (max-width:900px){.row2{grid-template-columns:1fr}}
+    .row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+    @media (max-width:1100px){.row3{grid-template-columns:1fr}}
+    .smallMuted{font-size:12px;color:var(--muted);margin-top:8px}
+
+    .bar{height:10px;border-radius:999px;background:rgba(255,255,255,.75);border:1px solid rgba(15,23,42,.06);overflow:hidden;margin-top:10px}
+    .bar>div{height:100%;background: var(--rose);width:0;transition:width .25s ease}
+
+    .mediaGrid{display:grid;gap:12px;grid-template-columns:repeat(3,minmax(0,1fr))}
+    @media (max-width:900px){.mediaGrid{grid-template-columns:1fr}}
+    .media{
+      border-radius: var(--r);
+      overflow:hidden;
+      border:1px solid rgba(15,23,42,.08);
+      background: rgba(255,255,255,.6);
+    }
+    .media img{width:100%;height:320px;object-fit:cover;display:block}
+    .media .cap{padding:10px 12px}
+    .capT{font-weight:950}
+    .capS{font-size:12px;color:var(--muted);margin-top:4px}
+    video{width:100%;display:block;background:#000}
+
+    .floatLayer{pointer-events:none;position:fixed;inset:0;z-index:999;overflow:hidden}
+    .heart{
+      position:absolute;
+      font-size:22px;
+      opacity:0;
+      transform: translateY(-20px);
+      animation: fall 1.8s ease-in forwards;
+      filter: drop-shadow(0 8px 10px rgba(0,0,0,.15));
+    }
+    @keyframes fall{
+      0%{opacity:0;transform:translateY(-30px) rotate(0deg)}
+      15%{opacity:1}
+      100%{opacity:0;transform:translateY(520px) rotate(80deg)}
+    }
+
+    .footer{
+      margin-top:18px;
+      border-radius: var(--r2);
+      background: rgba(255,255,255,.6);
+      border:1px solid rgba(15,23,42,.06);
+      padding:18px;
+      text-align:center;
+      color:var(--muted);
+      font-size:14px;
+    }
+    .footer b{color:var(--text)}
+
+    /* Music */
+    .player{
+      border-radius: var(--r);
+      background: rgba(255,255,255,.72);
+      border:1px solid rgba(15,23,42,.06);
+      padding:12px;
+      margin-top:10px;
+    }
+    .playerTop{display:flex;justify-content:space-between;gap:10px;align-items:flex-start;flex-wrap:wrap}
+    .trackTitle{font-weight:950}
+    .trackArtist{font-size:12px;color:var(--muted);margin-top:4px}
+    .timeRow{font-size:12px;color:var(--muted);font-weight:800}
+    .prog{
+      margin-top:10px;
+      height:10px;border-radius:999px;
+      background: rgba(15,23,42,.08);
+      overflow:hidden;
+      cursor:pointer;
+    }
+    .prog > div{height:100%;width:0%;background: var(--rose);transition: width .12s linear}
+    .playerBtns{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+
+    /* ✅ Volume */
+    .volRow{
+      margin-top:10px;
+      display:flex;
+      gap:10px;
+      align-items:center;
+      flex-wrap:wrap;
+      padding:10px;
+      border-radius:18px;
+      background: rgba(255,255,255,.75);
+      border:1px solid rgba(15,23,42,.06);
+    }
+    .volLabel{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      font-size:12px;
+      font-weight:950;
+      color: var(--text);
+      white-space:nowrap;
+    }
+    .volRange{
+      flex:1;
+      min-width:160px;
+    }
+
+    /* Game */
+    .gameBox{
+      border-radius: var(--r);
+      background: linear-gradient(135deg, rgba(253,232,232,.7), rgba(255,237,213,.7));
+      border:1px solid rgba(251,113,133,.18);
+      padding:14px;
+    }
+    .gameTop{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center}
+    .gamePill{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:6px 10px;border-radius:999px;
+      background: rgba(255,255,255,.75);
+      border:1px solid rgba(15,23,42,.06);
+      font-size:12px;font-weight:950;
+      color: var(--text);
+    }
+    .arena{
+      margin-top:12px;
+      position:relative;
+      height:340px;
+      border-radius: 22px;
+      background: rgba(255,255,255,.65);
+      border:1px solid rgba(15,23,42,.06);
+      overflow:hidden;
+    }
+    .tapHeart{
+      position:absolute;
+      width:54px;height:54px;
+      border-radius: 18px;
+      display:flex;align-items:center;justify-content:center;
+      background: rgba(253,232,232,.95);
+      border:1px solid rgba(251,113,133,.25);
+      box-shadow: 0 12px 22px rgba(15,23,42,.12);
+      user-select:none;
+      cursor:pointer;
+      transform: scale(.92);
+      animation: pop .22s ease-out forwards;
+    }
+    @keyframes pop{ to{ transform: scale(1); } }
+    .tapHeart:active{ transform: scale(.96) }
+    .tapHeart .emoji{font-size:26px}
+    .combo{
+      position:absolute;
+      left:12px;bottom:12px;
+      padding:8px 10px;border-radius: 18px;
+      background: rgba(0,0,0,.08);
+      border:1px solid rgba(15,23,42,.06);
+      font-size:12px;font-weight:950;color:var(--text);
+    }
+
+    /* Check-in */
+    .checkGrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+    @media (max-width:900px){.checkGrid{grid-template-columns:1fr}}
+    .checkBig{
+      border-radius: 24px;
+      background: rgba(255,255,255,.75);
+      border:1px solid rgba(15,23,42,.06);
+      padding:14px;
+    }
+    .checkBig h3{margin:0;font-size:14px}
+    .checkStatRow{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+    .checkStat{
+      display:inline-flex;gap:8px;align-items:center;
+      padding:8px 10px;border-radius:999px;
+      background: rgba(253,232,232,.7);
+      border:1px solid rgba(251,113,133,.18);
+      font-size:12px;font-weight:950;color:#9f1239;
+    }
+    .log{
+      margin-top:10px;
+      border-radius:18px;
+      background: rgba(255,255,255,.7);
+      border:1px solid rgba(15,23,42,.06);
+      padding:10px;
+      max-height:150px;
+      overflow:auto;
+      font-size:13px;
+      color: var(--text);
+      line-height:1.65;
+    }
+    .logItem{padding:8px 8px;border-radius:14px}
+    .logItem:nth-child(odd){background: rgba(253,232,232,.55)}
+    .logDate{font-size:12px;color:var(--muted);font-weight:800;margin-bottom:2px}
+
+    /* PET */
+    .petWrap{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:12px}
+    .petCard{
+      width:190px;height:190px;border-radius: 34px;
+      background: rgba(255,255,255,.78);
+      border:1px solid rgba(15,23,42,.06);
+      position:relative;overflow:hidden;
+      box-shadow: 0 16px 34px rgba(15,23,42,.12);
+      flex: 0 0 auto;
+      isolation:isolate;
+    }
+    .petGlow{
+      position:absolute; inset:-30px;
+      background:
+        radial-gradient(140px 140px at 25% 25%, rgba(251,113,133,.38), transparent 55%),
+        radial-gradient(160px 160px at 75% 20%, rgba(245,158,11,.28), transparent 60%),
+        radial-gradient(160px 160px at 60% 80%, rgba(59,130,246,.12), transparent 55%);
+      filter: blur(8px);
+      opacity:.95;
+      z-index:0;
+    }
+    .petToast{
+      position:absolute; left:10px; right:10px; top:10px;
+      padding:8px 10px;
+      border-radius:18px;
+      background: rgba(0,0,0,.08);
+      border:1px solid rgba(15,23,42,.06);
+      font-size:12px;font-weight:950;color:var(--text);
+      opacity:0; transform: translateY(-8px);
+      transition: opacity .18s ease, transform .18s ease;
+      pointer-events:none;
+      text-align:center;
+      z-index:5;
+    }
+    .petToast.show{opacity:1; transform: translateY(0)}
+    .petStage{
+      position:absolute; inset:0;
+      display:flex; align-items:center; justify-content:center;
+      z-index:2;
+    }
+    .petSprite{
+      --petHue: 0deg;
+      --petSat: 100%;
+      --petBright: 100%;
+      position:relative;
+      width:132px;height:132px;
+      transform-origin: 50% 80%;
+      filter: drop-shadow(0 18px 16px rgba(0,0,0,.08)) hue-rotate(var(--petHue)) saturate(var(--petSat)) brightness(var(--petBright));
+    }
+    .petBody{
+      position:absolute; inset:18px 10px 8px 10px;
+      border-radius: 44px;
+      background: linear-gradient(180deg, rgba(253,232,232,.98), rgba(255,237,213,.94));
+      border:1px solid rgba(251,113,133,.22);
+      box-shadow: inset 0 0 0 3px rgba(255,255,255,.78);
+    }
+    .petBelly{
+      position:absolute; left:50%; bottom:18px; transform: translateX(-50%);
+      width:72px;height:56px;border-radius: 40px;
+      background: rgba(255,255,255,.55);
+      border:1px solid rgba(15,23,42,.05);
+    }
+    .petEar{
+      position:absolute; top:4px;
+      width:38px;height:42px;
+      border-radius: 18px 18px 10px 10px;
+      background: rgba(253,232,232,.98);
+      border:1px solid rgba(251,113,133,.22);
+      transform-origin: 50% 100%;
+    }
+    .petEar::after{
+      content:"";
+      position:absolute; left:50%; top:8px; transform: translateX(-50%);
+      width:18px;height:24px;border-radius: 999px;
+      background: rgba(251,113,133,.18);
+    }
+    .petEar.l{left:18px; transform: rotate(-12deg)}
+    .petEar.r{right:18px; transform: rotate(12deg)}
+    .petTail{
+      position:absolute; right:-2px; bottom:40px;
+      width:44px;height:44px;
+      border-radius: 18px;
+      background: linear-gradient(180deg, rgba(253,232,232,.98), rgba(255,237,213,.92));
+      border:1px solid rgba(251,113,133,.20);
+      transform-origin: 10% 70%;
+      transform: rotate(18deg);
+    }
+    .petTail::after{
+      content:"";
+      position:absolute; inset:10px;
+      border-radius: 16px;
+      background: rgba(255,255,255,.45);
+    }
+    .petPaw{
+      position:absolute; bottom:6px;
+      width:34px;height:26px;border-radius: 16px;
+      background: rgba(253,232,232,.98);
+      border:1px solid rgba(251,113,133,.20);
+      transform-origin: 50% 50%;
+    }
+    .petPaw.l{left:34px}
+    .petPaw.r{right:34px}
+    .petPaw::after{
+      content:"";
+      position:absolute; left:50%; top:10px; transform: translateX(-50%);
+      width:18px;height:6px;border-radius:999px;
+      background: rgba(251,113,133,.16);
+    }
+    .petFace{
+      position:absolute; left:0; right:0; top:46px;
+      display:flex; flex-direction:column; align-items:center;
+      gap:10px;
+      pointer-events:none;
+    }
+    .petEyes{display:flex; gap:22px}
+    .petEye{
+      width:12px;height:14px;border-radius: 8px;
+      background: rgba(15,23,42,.85);
+      position:relative;
+      transition: height .16s ease, transform .16s ease;
+    }
+    .petEye::after{
+      content:"";
+      position:absolute; left:2px; top:2px;
+      width:4px;height:4px;border-radius:999px;
+      background: rgba(255,255,255,.9);
+    }
+    .petEyeSpark{
+      position:absolute;
+      left:50%; top:-14px;
+      transform: translateX(-50%) scale(.8);
+      opacity:0;
+      font-size:14px;
+      filter: drop-shadow(0 10px 12px rgba(0,0,0,.15));
+    }
+    .petBlush{
+      position:absolute; top:56px;
+      width:18px;height:10px;border-radius:999px;
+      background: rgba(251,113,133,.22);
+      filter: blur(.2px);
+      opacity:.85;
+      transition: opacity .18s ease;
+    }
+    .petBlush.l{left:22px}
+    .petBlush.r{right:22px}
+    .petMouth{
+      width:22px;height:10px;
+      border:2px solid rgba(15,23,42,.75);
+      border-top:0;border-left:0;border-right:0;
+      border-radius: 0 0 18px 18px;
+      transition: all .16s ease;
+    }
+    .petTongue{
+      position:absolute;
+      width:12px;height:10px;
+      border-radius: 0 0 10px 10px;
+      background: rgba(251,113,133,.42);
+      top:92px;
+      opacity:0;
+      transform: translateY(-2px);
+      transition: opacity .16s ease, transform .16s ease;
+    }
+    .petBow{
+      position:absolute; top:36px; left:50%;
+      transform: translateX(-50%);
+      width:18px;height:18px;border-radius: 6px;
+      background: rgba(251,113,133,.65);
+      border:1px solid rgba(225,29,72,.22);
+      box-shadow: inset 0 0 0 2px rgba(255,255,255,.55);
+      opacity:0;
+      transition: opacity .18s ease, transform .18s ease;
+    }
+    .petBow::before,.petBow::after{
+      content:"";
+      position:absolute; top:50%;
+      width:18px;height:14px;
+      background: rgba(251,113,133,.55);
+      border:1px solid rgba(225,29,72,.18);
+      border-radius: 10px;
+      transform: translateY(-50%);
+    }
+    .petBow::before{left:-16px; transform: translateY(-50%) rotate(-10deg)}
+    .petBow::after{right:-16px; transform: translateY(-50%) rotate(10deg)}
+
+    .petWings{
+      position:absolute; left:50%; top:58px;
+      transform: translateX(-50%);
+      width:160px;height:70px;
+      pointer-events:none;
+      opacity:0;
+      transition: opacity .2s ease, transform .2s ease;
+      z-index:1;
+      filter: drop-shadow(0 12px 14px rgba(0,0,0,.08));
+    }
+    .petWing{
+      position:absolute; top:10px;
+      width:70px;height:48px;border-radius: 40px;
+      background: rgba(255,255,255,.55);
+      border:1px solid rgba(15,23,42,.06);
+    }
+    .petWing.l{left:0; transform: rotate(-10deg)}
+    .petWing.r{right:0; transform: rotate(10deg)}
+    .petWings::after{
+      content:"";
+      position:absolute; left:50%; top:18px;
+      transform: translateX(-50%);
+      width:20px;height:20px;border-radius:999px;
+      background: rgba(255,255,255,.35);
+      border:1px solid rgba(15,23,42,.06);
+    }
+
+    .petCrown{
+      position:absolute; left:50%; top:8px;
+      transform: translateX(-50%);
+      width:44px;height:30px;
+      opacity:0;
+      transition: opacity .2s ease, transform .2s ease;
+      z-index:4;
+      filter: drop-shadow(0 12px 14px rgba(0,0,0,.10));
+    }
+    .petCrownBase{
+      position:absolute; left:0; right:0; bottom:0;
+      height:12px;border-radius: 999px;
+      background: rgba(245,158,11,.75);
+      border:1px solid rgba(245,158,11,.20);
+    }
+    .petSpike{
+      position:absolute; bottom:10px;
+      width:12px;height:16px;border-radius: 8px 8px 4px 4px;
+      background: rgba(245,158,11,.75);
+      border:1px solid rgba(245,158,11,.20);
+    }
+    .petSpike.s1{left:4px; transform: rotate(-8deg)}
+    .petSpike.s2{left:16px; height:20px}
+    .petSpike.s3{left:28px; transform: rotate(8deg)}
+    .petGem{
+      position:absolute; left:50%; top:6px;
+      transform: translateX(-50%);
+      width:10px;height:10px;border-radius:999px;
+      background: rgba(225,29,72,.75);
+      border:1px solid rgba(225,29,72,.25);
+    }
+
+    .petStrawHat{
+      position:absolute; left:50%; top:0px;
+      transform: translateX(-50%);
+      width:58px;height:42px;
+      opacity:0;
+      transition: opacity .2s ease, transform .2s ease;
+      z-index:4;
+      filter: drop-shadow(0 12px 14px rgba(0,0,0,.10));
+    }
+    .hatTop{
+      position:absolute; left:50%; top:6px;
+      transform: translateX(-50%);
+      width:34px;height:20px;border-radius: 16px 16px 10px 10px;
+      background: rgba(253,232,232,.95);
+      border:1px solid rgba(251,113,133,.22);
+    }
+    .hatBrim{
+      position:absolute; left:50%; top:18px;
+      transform: translateX(-50%);
+      width:56px;height:16px;border-radius: 999px;
+      background: rgba(255,255,255,.65);
+      border:1px solid rgba(15,23,42,.06);
+    }
+    .hatBerry{
+      position:absolute; left:50%; top:18px;
+      transform: translateX(6px);
+      font-size:14px;
+    }
+
+    .petSprite.idle{animation: petBob 2.6s ease-in-out infinite;}
+    @keyframes petBob{0%,100%{transform: translateY(6px) rotate(0deg)}50%{transform: translateY(0px) rotate(-1.2deg)}}
+    .petSprite.idle .petTail{animation: tailWag 1.3s ease-in-out infinite;}
+    @keyframes tailWag{0%,100%{transform: rotate(18deg)}50%{transform: rotate(-8deg)}}
+    .petSprite.idle .petEar.l{animation: earT 3.2s ease-in-out infinite}
+    .petSprite.idle .petEar.r{animation: earT2 3.0s ease-in-out infinite}
+    @keyframes earT{0%,100%{transform:rotate(-12deg)}50%{transform:rotate(-18deg)}}
+    @keyframes earT2{0%,100%{transform:rotate(12deg)}50%{transform:rotate(18deg)}}
+
+    .petSprite.sleepy .petEye{height:4px;border-radius:999px}
+    .petSprite.sleepy .petMouth{width:18px}
+    .petSprite.sleepy .petTail{animation:none; opacity:.75}
+
+    .petSprite.love .petMouth{
+      width:12px;height:12px;border-radius:999px;
+      border:2px solid rgba(15,23,42,.75);
+      border-top:2px solid rgba(15,23,42,.75);
+    }
+    .petSprite.wow .petMouth{
+      width:10px;height:10px;border-radius:999px;
+      border:2px solid rgba(15,23,42,.75);
+    }
+    .petSprite.yum .petTongue{opacity:1; transform: translateY(0)}
+    .petSprite.yum .petMouth{width:26px;height:12px;border-radius:0 0 22px 22px}
+    .petSprite.sparkle .petEyeSpark{opacity:1; animation: sparkTw .6s ease-in-out infinite}
+    @keyframes sparkTw{0%,100%{transform:translateX(-50%) scale(.85)}50%{transform:translateX(-50%) scale(1.1)}}
+
+    .petSprite.act-chomp{animation: chomp .75s ease-in-out 1}
+    @keyframes chomp{
+      0%{transform: translateY(6px) scale(1)}
+      25%{transform: translateY(4px) scale(1.06) rotate(-2deg)}
+      55%{transform: translateY(10px) scale(.98) rotate(2deg)}
+      100%{transform: translateY(6px) scale(1)}
+    }
+    .petSprite.act-spin{animation: spin .9s cubic-bezier(.2,.9,.2,1) 1}
+    @keyframes spin{
+      0%{transform: translateY(6px) rotate(0deg)}
+      60%{transform: translateY(0px) rotate(360deg)}
+      100%{transform: translateY(6px) rotate(360deg)}
+    }
+    .petSprite.act-hop{animation: hop .6s ease-out 1}
+    @keyframes hop{
+      0%{transform: translateY(6px)}
+      50%{transform: translateY(-10px) scale(1.03)}
+      100%{transform: translateY(6px)}
+    }
+    .petSprite.act-wiggle{animation: wiggle .65s ease-in-out 1}
+    @keyframes wiggle{
+      0%{transform: translateY(6px) rotate(0deg)}
+      20%{transform: translateY(6px) rotate(-10deg)}
+      45%{transform: translateY(6px) rotate(10deg)}
+      70%{transform: translateY(6px) rotate(-6deg)}
+      100%{transform: translateY(6px) rotate(0deg)}
+    }
+    .petSprite.act-paw .petPaw.l{animation: paw .55s ease-in-out 1}
+    .petSprite.act-paw .petPaw.r{animation: paw .55s ease-in-out 1 .06s}
+    @keyframes paw{
+      0%{transform: translateY(0)}
+      50%{transform: translateY(-10px) rotate(-10deg)}
+      100%{transform: translateY(0)}
+    }
+    .petSprite.xpPulse{animation: xpPulse .55s ease-out 1}
+    @keyframes xpPulse{
+      0%{transform: translateY(6px) scale(1)}
+      40%{transform: translateY(4px) scale(1.08)}
+      100%{transform: translateY(6px) scale(1)}
+    }
+
+    .foodFly{
+      position:absolute;
+      left:50%; top:70%;
+      transform: translate(-50%,-50%) scale(.7);
+      font-size:22px;
+      opacity:0;
+      animation: fly .7s ease-out forwards;
+      filter: drop-shadow(0 10px 10px rgba(0,0,0,.18));
+      pointer-events:none;
+      z-index:4;
+    }
+    @keyframes fly{
+      0%{opacity:0; transform: translate(-50%,10px) scale(.55)}
+      20%{opacity:1}
+      100%{opacity:0; transform: translate(-50%,-58px) scale(1.1)}
+    }
+    .particle{
+      position:absolute;
+      left:50%; top:52%;
+      transform: translate(-50%,-50%);
+      font-size:18px;
+      opacity:0;
+      pointer-events:none;
+      animation: particle 1.05s ease-out forwards;
+      filter: drop-shadow(0 12px 12px rgba(0,0,0,.18));
+      z-index:4;
+    }
+    @keyframes particle{
+      0%{opacity:0; transform: translate(-50%,-50%) scale(.7)}
+      15%{opacity:1}
+      100%{opacity:0; transform: translate(calc(-50% + var(--dx)), calc(-50% + var(--dy))) scale(1.1)}
+    }
+    .petOverlaySpark{
+      position:absolute; inset:0;
+      border-radius:34px;
+      background: radial-gradient(160px 120px at 50% 40%, rgba(255,255,255,.55), transparent 60%);
+      opacity:0;
+      pointer-events:none;
+      z-index:3;
+      animation: none;
+    }
+    .petOverlaySpark.play{animation: overlaySpark .65s ease-out 1}
+    @keyframes overlaySpark{
+      0%{opacity:0; transform: scale(.96)}
+      25%{opacity:.7}
+      100%{opacity:0; transform: scale(1.02)}
+    }
+
+    .bubble{
+      min-width: 220px;
+      flex:1;
+      border-radius: 22px;
+      background: rgba(255,255,255,.75);
+      border:1px solid rgba(15,23,42,.06);
+      padding:12px;
+      position:relative;
+    }
+    .bubble:before{
+      content:"";
+      position:absolute; left:-8px; top:22px;
+      width:16px;height:16px;
+      background: rgba(255,255,255,.75);
+      border-left:1px solid rgba(15,23,42,.06);
+      border-bottom:1px solid rgba(15,23,42,.06);
+      transform: rotate(45deg);
+    }
+    .bubbleTitle{font-weight:950;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center}
+    .bubbleText{margin-top:6px;color:var(--text);font-size:13px;line-height:1.7}
+    .petStats{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+    .petStat{
+      display:inline-flex;gap:6px;align-items:center;
+      padding:6px 10px;border-radius:999px;
+      background: rgba(253,232,232,.65);
+      border:1px solid rgba(251,113,133,.18);
+      font-size:12px;font-weight:950;color:#9f1239;
+    }
+    .petActions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+
+    /* Memory overlay */
+    .memoryOverlay{
+      position:fixed; inset:0; z-index:1000;
+      display:none;
+      background: radial-gradient(1200px 700px at 30% 20%, rgba(251,113,133,.18), transparent 55%),
+                  radial-gradient(1000px 600px at 70% 30%, rgba(245,158,11,.16), transparent 55%),
+                  rgba(2,6,23,.92);
+      backdrop-filter: blur(10px);
+    }
+    .memoryOverlay.show{ display:block; }
+    .memoryWrap{
+      height:100%;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      padding:18px;
+      max-width:1100px;
+      margin:0 auto;
+    }
+    .memoryTop{display:flex; gap:10px; flex-wrap:wrap; justify-content:space-between; align-items:center}
+    .memoryTop .title{color:#fff; font-weight:950; letter-spacing:-.02em}
+    .memoryTop .sub{color: rgba(255,255,255,.78); font-size:13px; margin-top:4px}
+    .memoryBtns{ display:flex; gap:10px; flex-wrap:wrap; }
+    .mbtn{
+      background: rgba(255,255,255,.10);
+      color:#fff;
+      border:1px solid rgba(255,255,255,.14);
+      border-radius:18px;
+      padding:10px 14px;
+      font-weight:900;
+      cursor:pointer;
+      transition: transform .06s ease, filter .2s ease;
+    }
+    .mbtn:active{ transform:scale(.98); }
+    .mbtn.primary{ background: rgba(225,29,72,.92); border-color: rgba(225,29,72,.25); }
+    .mbtn:hover{ filter: brightness(1.05); }
+
+    .memoryStage{
+      flex:1;
+      display:grid;
+      grid-template-columns: 1.3fr .7fr;
+      gap:14px;
+      min-height:0;
+    }
+    @media (max-width:900px){ .memoryStage{ grid-template-columns:1fr; } }
+    .stageCard{
+      border-radius:28px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      box-shadow: 0 18px 45px rgba(0,0,0,.35);
+      position:relative;
+      min-height:0;
+    }
+    .stageMedia{
+      width:100%; height:100%;
+      display:flex; align-items:center; justify-content:center;
+      position:relative;
+      background: rgba(0,0,0,.35);
+    }
+    .stageMedia img, .stageMedia video{
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      display:block;
+    }
+    .fadeIn{ animation: fadeIn .35s ease-out; }
+    @keyframes fadeIn{ from{ opacity:0; transform: scale(.985); } to{ opacity:1; transform: scale(1); } }
+
+    .stageCaption{
+      position:absolute;
+      left:14px; right:14px; bottom:12px;
+      padding:10px 12px;
+      border-radius:18px;
+      background: rgba(0,0,0,.45);
+      border:1px solid rgba(255,255,255,.14);
+    }
+    .stageCaption .capT{ color:#fff; font-weight:950; }
+    .stageCaption .capS{ color: rgba(255,255,255,.78); font-size:12px; margin-top:4px; }
+
+    .sideCard{
+      border-radius:28px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      padding:14px;
+      color:#fff;
+      min-height:0;
+      overflow:auto;
+    }
+    .sidePill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:6px 10px;
+      border-radius:999px;
+      background: rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.14);
+      font-size:12px;
+      font-weight:900;
+    }
+    .progress{
+      margin-top:10px;
+      height:10px; border-radius:999px;
+      background: rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.14);
+      overflow:hidden;
+    }
+    .progress > div{
+      height:100%;
+      width:0%;
+      background: rgba(225,29,72,.95);
+      transition: width .25s ease;
+    }
+    .thumbGrid{
+      margin-top:12px;
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:10px;
+    }
+    .thumb{
+      border-radius:18px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.08);
+      cursor:pointer;
+      transition: transform .08s ease, filter .2s ease;
+    }
+    .thumb:active{ transform:scale(.985); }
+    .thumb:hover{ filter: brightness(1.06); }
+    .thumb img{ width:100%; height:92px; object-fit:cover; display:block; }
+    .thumb .tcap{
+      padding:8px 10px;
+      font-size:12px; font-weight:900;
+      color: rgba(255,255,255,.9);
+      white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+    }
+
+    /* 18-photo carousel */
+    .carousel{
+      margin-top:12px;
+      border-radius: 24px;
+      border:1px solid rgba(15,23,42,.06);
+      background: rgba(255,255,255,.72);
+      overflow:hidden;
+      box-shadow: 0 10px 26px rgba(15,23,42,.08);
+    }
+    .carStage{
+      position:relative;
+      height:420px;
+      background: rgba(0,0,0,.06);
+      display:flex;align-items:center;justify-content:center;
+    }
+    .carStage img{
+      width:100%;height:100%;
+      display:block;
+      background: rgba(0,0,0,.06);
+      object-fit:contain;
+    }
+    .carControls{
+      display:flex;gap:10px;flex-wrap:wrap;
+      padding:12px;
+      justify-content:space-between;
+      align-items:center;
+    }
+    .carLeft{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+    .dots{
+      display:flex;gap:6px;flex-wrap:wrap;
+      align-items:center;
+      justify-content:flex-end;
+    }
+    .dot{
+      width:10px;height:10px;border-radius:999px;
+      background: rgba(15,23,42,.16);
+      border:1px solid rgba(15,23,42,.06);
+      cursor:pointer;
+    }
+    .dot.active{background: var(--rose)}
+    .carProg{
+      flex:1;
+      min-width:160px;
+      height:10px;border-radius:999px;
+      background: rgba(15,23,42,.08);
+      overflow:hidden;
+      cursor:pointer;
+      border:1px solid rgba(15,23,42,.06);
+    }
+    .carProg>div{height:100%;width:0%;background: var(--rose);transition:width .12s linear}
+
+    /* cookie jar + mood */
+    .jar{
+      margin-top:12px;
+      border-radius:18px;
+      background: rgba(255,255,255,.75);
+      border:1px solid rgba(15,23,42,.06);
+      padding:10px;
+      max-height:160px;
+      overflow:auto;
+    }
+    .jarItem{
+      padding:8px 10px;border-radius:14px;
+      font-size:13px;line-height:1.6;
+      display:flex;gap:10px;justify-content:space-between;align-items:flex-start;
+    }
+    .jarItem:nth-child(odd){background: rgba(253,232,232,.55)}
+    .jarItem button{
+      padding:8px 10px;border-radius:14px;font-size:12px;font-weight:950;
+      box-shadow:none;
+    }
+    .rangeRow{
+      margin-top:12px;
+      padding:10px;
+      border-radius:18px;
+      background: rgba(255,255,255,.75);
+      border:1px solid rgba(15,23,42,.06);
+    }
+    input[type="range"]{ width:100% }
+
+    /* reward + coupon */
+    .rewardBox{
+      margin-top:12px;
+      border-radius:18px;
+      background: rgba(255,255,255,.75);
+      border:1px solid rgba(15,23,42,.06);
+      padding:12px;
+    }
+    .coupon{
+      margin-top:10px;
+      border-radius:18px;
+      background: linear-gradient(135deg, rgba(253,232,232,.75), rgba(255,237,213,.75));
+      border:1px solid rgba(251,113,133,.18);
+      padding:12px;
+    }
+    .couponT{font-weight:950}
+    .couponS{margin-top:6px;color:var(--muted);font-size:12px;line-height:1.7}
+
+    /* GIF corner video */
+    .gifCorner{
+      position:fixed;
+      right:14px;
+      top:14px;
+      width:180px;
+      border-radius:22px;
+      overflow:hidden;
+      z-index:1200;
+      border:1px solid rgba(15,23,42,.08);
+      background: rgba(255,255,255,.75);
+      box-shadow: 0 14px 30px rgba(15,23,42,.18);
+      backdrop-filter: blur(10px);
+    }
+    .gifCorner video{
+      width:100%;
+      height:140px;
+      object-fit:cover;
+      display:block;
+    }
+    .gifCorner .gcap{
+      padding:8px 10px;
+      font-size:12px;
+      font-weight:950;
+      color: rgba(15,23,42,.78);
+      text-align:center;
+      display:block;
+    }
+    .gcap b{color:var(--text)}
+  </style>
+</head>
+
+<body>
+  <div class="gifCorner">
+    <video src="GIF.mp4" autoplay muted loop playsinline></video>
+    <div class="gcap">我最可爱的宝宝。</div>
+  </div>
+
+  <div class="floatLayer" id="floatLayer"></div>
+
+  <div class="memoryOverlay" id="memoryOverlay">
+    <div class="memoryWrap">
+      <div class="memoryTop">
+        <div>
+          <div class="title">🌙 回忆模式 · 给 <span id="nicknameOverlay">玲宝</span> 的小电影</div>
+          <div class="sub">想回到那一刻，就按下播放键。</div>
+        </div>
+
+        <div class="memoryBtns">
+          <button class="mbtn" id="btnNick">切换称呼</button>
+          <button class="mbtn" id="btnPrevMem">← 上一段</button>
+          <button class="mbtn primary" id="btnPlayMem">▶ 自动播放</button>
+          <button class="mbtn" id="btnNextMem">下一段 →</button>
+          <button class="mbtn" id="btnCloseMem">✕ 退出回忆</button>
+        </div>
+      </div>
+
+      <div class="memoryStage">
+        <div class="stageCard">
+          <div class="stageMedia" id="stageMedia"></div>
+          <div class="stageCaption">
+            <div class="capT" id="memCapT">—</div>
+            <div class="capS" id="memCapS">—</div>
+          </div>
+        </div>
+
+        <div class="sideCard">
+          <div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center">
+            <span class="sidePill">🎞️ 进度：<b id="memIdx">1</b>/<b id="memTotal">1</b></span>
+            <span class="sidePill">⏱️ 每段：<b id="memSpeedLabel">6</b>s</span>
+          </div>
+
+          <div class="progress"><div id="memBar"></div></div>
+          <div class="thumbGrid" id="thumbGrid"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <section class="hero">
+      <div class="heroTop">
+        <div>
+          <div class="tag">✨ 情人节限定 · 温馨有温度</div>
+          <div class="h1">我最亲爱的，<span class="love">晓玲</span></div>
+          <p class="p">晓玲负责发光，我负责心动。</p>
+        </div>
+        <div class="btnRow">
+          <button class="btnPrimary" id="btnBoom">🎉 点我一下</button>
+          <button class="btnSoft" id="btnGoFun">✨ 去玩</button>
+        </div>
+      </div>
+
+      <div class="cards3">
+        <div class="mini">
+          <div class="miniTitle">⏱️ 实时恋爱计时</div>
+          <div class="miniSub">从 2025-11-15 开始</div>
+        </div>
+        <div class="mini">
+          <div class="miniTitle">🎁 生日倒计时</div>
+          <div class="miniSub">每年 03-19</div>
+        </div>
+        <div class="mini">
+          <div class="miniTitle">🌙 回忆模式</div>
+          <div class="miniSub">想你就打开</div>
+        </div>
+      </div>
+    </section>
+
+    <nav class="tabs" style="margin-top:16px">
+      <button class="tab active" data-tab="home">❤️ 首页</button>
+      <button class="tab" data-tab="fun">✨ 消遣</button>
+      <button class="tab" data-tab="memory">📷 回忆</button>
+    </nav>
+
+    <main class="grid">
+      <!-- HOME -->
+      <section class="panel" id="panel-home">
+        <div class="card">
+          <div class="cardInner">
+            <div class="cardHead">
+              <div class="icon">⏱️</div>
+              <div style="flex:1;min-width:0">
+                <div class="ctitle">我们相恋了多久</div>
+                <div class="csub">实时刷新，永远在线。</div>
+
+                <div class="pillRow">
+                  <span class="pill">💘 恋爱开始：<b id="loveDate">2025-11-15</b></span>
+                  <span class="pill">🎂 生日：<b>03-19</b></span>
+                </div>
+
+                <div class="segGrid">
+                  <div class="seg"><div class="segNum" id="loveDays">0</div><div class="segLab">天</div></div>
+                  <div class="seg"><div class="segNum" id="loveHours">0</div><div class="segLab">小时</div></div>
+                  <div class="seg"><div class="segNum" id="loveMins">0</div><div class="segLab">分钟</div></div>
+                  <div class="seg"><div class="segNum" id="loveSecs">0</div><div class="segLab">秒</div></div>
+                </div>
+
+                <div class="softBox" style="margin-top:12px">
+                  <div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center">
+                    <div class="softTitle">🎁 距离她下次生日还有</div>
+                    <span class="pill">📅 <b id="nextBdayDate">—</b></span>
+                  </div>
+                  <div class="segGrid" style="margin-top:10px">
+                    <div class="seg"><div class="segNum" id="bdDays">0</div><div class="segLab">天</div></div>
+                    <div class="seg"><div class="segNum" id="bdHours">0</div><div class="segLab">小时</div></div>
+                    <div class="seg"><div class="segNum" id="bdMins">0</div><div class="segLab">分钟</div></div>
+                    <div class="seg"><div class="segNum" id="bdSecs">0</div><div class="segLab">秒</div></div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Today fun -->
+        <div class="card">
+          <div class="cardInner">
+            <div class="cardHead">
+              <div class="icon">✨</div>
+              <div style="flex:1">
+                <div class="ctitle">今天的小快乐</div>
+                <div class="csub">想笑就点一点，想被宠就点一点。</div>
+
+                <div class="row2" style="margin-top:12px">
+                  <!-- Cookie -->
+                  <div class="softBox">
+                    <div class="softTitle">🍪 今日甜言饼干</div>
+                    <div class="softText" id="cookieText" style="background:rgba(255,255,255,.75);border:1px solid rgba(15,23,42,.06);border-radius:18px;padding:12px;margin-top:10px">
+                      点一下“开饼干”，随机掉落一句小可爱。
+                    </div>
+                    <div class="smallMuted" id="cookieLinkTip" style="margin-top:10px">—</div>
+                    <div class="btnRow" style="margin-top:10px">
+                      <button class="btnPrimary" id="btnCookie">🎲 开饼干</button>
+                      <button class="btnSoft" id="btnCopy" disabled>📋 复制给他</button>
+                      <button class="btnSoft" id="btnUseForCheckin" disabled>✅ 用作今天签到</button>
+                    </div>
+
+                    <div class="rewardBox" style="margin-top:12px">
+                      <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap">
+                        <div class="softTitle">🫙 甜言收藏罐</div>
+                        <button class="btnSoft" id="btnClearJar">清空</button>
+                      </div>
+                      <div class="smallMuted">最近的 12 句都会在这里。</div>
+                      <div class="jar" id="jar"></div>
+                    </div>
+
+                    <div class="rangeRow">
+                      <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap">
+                        <div class="softTitle">🌡️ 心动温度计</div>
+                        <span class="pill">当前：<b id="moodVal">65</b>°</span>
+                      </div>
+                      <div class="smallMuted" id="moodHint">拖一拖，看看今天会不会被宠到冒泡。</div>
+                      <input id="moodRange" type="range" min="0" max="100" value="65" />
+                    </div>
+                  </div>
+
+                  <!-- Pet -->
+                  <div class="softBox">
+                    <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap">
+                      <div class="softTitle">🐾 晓玲的小宠物</div>
+                      <span class="pill">💗 亲密 <b id="petAff">0</b></span>
+                    </div>
+
+                    <div class="petWrap">
+                      <div class="petCard" id="petCard">
+                        <div class="petGlow"></div>
+                        <div class="petOverlaySpark" id="petOverlaySpark"></div>
+                        <div class="petToast" id="petToast">—</div>
+
+                        <div class="petStage">
+                          <div class="petWings" id="petWings">
+                            <div class="petWing l"></div>
+                            <div class="petWing r"></div>
+                          </div>
+
+                          <div class="petCrown" id="petCrown">
+                            <div class="petCrownBase"></div>
+                            <div class="petSpike s1"></div>
+                            <div class="petSpike s2"></div>
+                            <div class="petSpike s3"></div>
+                            <div class="petGem"></div>
+                          </div>
+
+                          <div class="petStrawHat" id="petStrawHat">
+                            <div class="hatTop"></div>
+                            <div class="hatBrim"></div>
+                            <div class="hatBerry">🍓</div>
+                          </div>
+
+                          <div class="petSprite idle" id="petSprite">
+                            <div class="petTail"></div>
+                            <div class="petEar l"></div>
+                            <div class="petEar r"></div>
+                            <div class="petBody"></div>
+                            <div class="petBelly"></div>
+                            <div class="petBow" id="petBow"></div>
+                            <div class="petPaw l"></div>
+                            <div class="petPaw r"></div>
+
+                            <div class="petFace">
+                              <div class="petEyes">
+                                <div class="petEye"><div class="petEyeSpark" id="sparkL">✨</div></div>
+                                <div class="petEye"><div class="petEyeSpark" id="sparkR">✨</div></div>
+                              </div>
+                              <div class="petMouth" id="petMouth"></div>
+                              <div class="petTongue" id="petTongue"></div>
+                              <div class="petBlush l"></div>
+                              <div class="petBlush r"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="bubble">
+                        <div class="bubbleTitle">
+                          <span id="petName">奶糖</span>
+                          <span class="petStat" style="margin:0">🔊 <b id="sfxState">音效开</b></span>
+                        </div>
+                        <div class="bubbleText" id="petLine">今天也想靠近你一点点。</div>
+
+                        <div class="petStats">
+                          <span class="petStat">🍽️ 饱腹 <b id="petFull">60</b></span>
+                          <span class="petStat">✨ 心情 <b id="petMood">3</b>/5</span>
+                          <span class="petStat">⭐ 等级 <b id="petLv">1</b></span>
+                          <span class="petStat">🌟 经验 <b id="petXp">0</b>/<b id="petXpMax">10</b></span>
+                        </div>
+
+                        <div class="bar"><div id="petBar"></div></div>
+
+                        <div class="petActions">
+                          <button class="btnPrimary" id="btnStraw">🍓 草莓</button>
+                          <button class="btnSoft" id="btnCake">🍰 小蛋糕</button>
+                          <button class="btnSoft" id="btnFish">🐟 小鱼干</button>
+                          <button class="btnSoft" id="btnMilk">🥛 牛奶</button>
+                          <button class="btnSoft" id="btnPat">🤲 摸摸头</button>
+                          <button class="btnSoft" id="btnHug">🫶 抱抱</button>
+                          <button class="btnSoft" id="btnSfx">切换音效</button>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+                <!-- 18-photo carousel -->
+                <div class="softBox" style="margin-top:12px">
+                  <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap">
+                    <div class="softTitle">📸 我们 · 循环播放</div>
+                    <span class="pill">🎞️ <b id="carIdx">1</b>/<b id="carTotal">18</b></span>
+                  </div>
+
+                  <div class="carousel">
+                    <div class="carStage" id="carStage">
+                      <img id="carImg" src="循环/1.jpg" alt="循环相册">
+                    </div>
+
+                    <div class="carControls">
+                      <div class="carLeft">
+                        <button class="btnSoft" id="carPrev">← 上一张</button>
+                        <button class="btnPrimary" id="carPlay">⏸ 暂停</button>
+                        <button class="btnSoft" id="carNext">下一张 →</button>
+                        <button class="btnSoft" id="carFit">完整显示</button>
+                      </div>
+
+                      <div class="carProg" id="carProg"><div id="carProgFill"></div></div>
+                      <div class="dots" id="carDots"></div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Poems -->
+        <div class="card">
+          <div class="cardInner">
+            <div class="cardHead">
+              <div class="icon">🪷</div>
+              <div style="flex:1">
+                <div class="ctitle">诗里写晓玲</div>
+                <div class="csub">每点一次，就换一段夸你的句子。</div>
+
+                <div class="softBox" style="margin-top:12px">
+                  <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap">
+                    <div class="softTitle" id="poemHead">—</div>
+                    <button class="btnSoft" id="btnPoem">换一句</button>
+                  </div>
+                  <div class="softText" id="poemText">—</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- FUN -->
+      <section class="panel" id="panel-fun" style="display:none">
+        <div class="card">
+          <div class="cardInner">
+            <div class="cardHead">
+              <div class="icon">💗</div>
+              <div style="flex:1">
+                <div class="ctitle">想我了就玩一下：心动抓抓乐</div>
+                <div class="csub">30 秒内点到越多爱心越好。</div>
+
+                <div class="gameBox" style="margin-top:12px">
+                  <div class="gameTop">
+                    <span class="gamePill">⏱️ 剩余：<b id="gameTime">30</b>s</span>
+                    <span class="gamePill">✨ 得分：<b id="gameScore">0</b></span>
+                    <span class="gamePill">🔥 连击：<b id="gameCombo">0</b></span>
+                    <div class="btnRow">
+                      <button class="btnPrimary" id="btnGameStart">开始</button>
+                      <button class="btnSoft" id="btnGameStop" disabled>结束</button>
+                    </div>
+                  </div>
+
+                  <div class="arena" id="arena">
+                    <div class="combo" id="gameHint">点到 💗 会加分。</div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="cardInner">
+            <div class="cardHead">
+              <div class="icon">🎵</div>
+              <div style="flex:1">
+                <div class="ctitle">我们的歌单</div>
+                <div class="csub">听一首，就更想你一点。</div>
+
+                <div class="softBox" style="margin-top:12px">
+                  <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap">
+                    <div class="softTitle">正在播放</div>
+                    <span class="pill">🎧 <b id="songIndex">1</b>/<b id="songTotal">4</b></span>
+                  </div>
+
+                  <div class="player">
+                    <div class="playerTop">
+                      <div>
+                        <div class="trackTitle" id="songTitle">—</div>
+                        <div class="trackArtist" id="songArtist">—</div>
+                      </div>
+                      <div class="timeRow"><span id="curTime">00:00</span> / <span id="durTime">00:00</span></div>
+                    </div>
+
+                    <div class="prog" id="prog">
+                      <div id="progFill"></div>
+                    </div>
+
+                    <!-- ✅ 新增：音量调节 -->
+                    <div class="volRow">
+                      <span class="volLabel">🔊 音量 <b id="volLabel">70%</b></span>
+                      <input class="volRange" id="volRange" type="range" min="0" max="100" value="70" />
+                      <button class="btnSoft" id="btnMute">静音</button>
+                    </div>
+
+                    <div class="playerBtns">
+                      <button class="btnSoft" id="btnPrev">⟵ 上一首</button>
+                      <button class="btnPrimary" id="btnPlay">▶ 播放</button>
+                      <button class="btnSoft" id="btnNext">下一首 ⟶</button>
+                    </div>
+
+                    <audio id="audio" preload="metadata"></audio>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="cardInner">
+            <div class="cardHead">
+              <div class="icon">🎉</div>
+              <div style="flex:1">
+                <div class="ctitle">一键庆祝</div>
+                <div class="csub">每天一点点开心，也很浪漫。</div>
+
+                <div class="checkGrid">
+                  <div class="checkBig">
+                    <h3>🎉 小花雨</h3>
+                    <div class="smallMuted">想要庆祝就按一下。</div>
+                    <div class="btnRow" style="margin-top:10px">
+                      <button class="btnPrimary" id="btnBoom2">🎉 再来一次</button>
+                      <button class="btnSoft" id="btnOpenMemory2">🌙 回忆模式</button>
+                    </div>
+
+                    <div class="rewardBox">
+                      <div class="softTitle">🎁 抽一张“被宠券”</div>
+                      <div class="smallMuted">点一次换一张。</div>
+                      <div class="coupon" id="couponBox">
+                        <div class="couponT" id="couponT">—</div>
+                        <div class="couponS" id="couponS">—</div>
+                      </div>
+                      <div class="btnRow" style="margin-top:10px">
+                        <button class="btnPrimary" id="btnCoupon">再抽一张</button>
+                        <button class="btnSoft" id="btnCouponUse">我想要这个</button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="checkBig">
+                    <h3>✅ 每日签到</h3>
+                    <div class="smallMuted">每天点一下，记录一个小开心。</div>
+
+                    <div class="checkStatRow">
+                      <span class="checkStat">📅 连续 <b id="streak">0</b> 天</span>
+                      <span class="checkStat">🧡 总计 <b id="totalChecks">0</b> 次</span>
+                    </div>
+
+                    <div class="btnRow" style="margin-top:10px">
+                      <button class="btnPrimary" id="btnCheckin">今天签到</button>
+                      <button class="btnSoft" id="btnCheckinNote">写一句小开心</button>
+                    </div>
+
+                    <div class="rewardBox" style="margin-top:12px">
+                      <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap">
+                        <div class="softTitle">🏅 连签小奖励</div>
+                        <span class="pill">下一档：<b id="nextReward">3</b> 天</span>
+                      </div>
+                      <div class="smallMuted" id="rewardLine">—</div>
+                      <div class="bar"><div id="rewardBar"></div></div>
+                    </div>
+
+                    <div class="log" id="checkLog"></div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- MEMORY -->
+      <section class="panel" id="panel-memory" style="display:none">
+        <div class="card">
+          <div class="cardInner">
+            <div class="cardHead">
+              <div class="icon">📷</div>
+              <div style="flex:1">
+                <div class="ctitle">
+                  回忆相册墙
+                  <button class="btnPrimary" id="btnOpenMemory">🌙 进入回忆模式</button>
+                </div>
+                <div class="csub">越看越有温度。</div>
+
+                <div class="mediaGrid" style="margin-top:12px">
+                  <div class="media">
+                    <img src="回忆1.jpg" alt="回忆1">
+                    <div class="cap">
+                      <div class="capT">爱死漂亮的老婆了</div>
+                      <div class="capS">见一眼就会沦陷的那种</div>
+                    </div>
+                  </div>
+                  <div class="media">
+                    <img src="回忆2.jpg" alt="回忆2">
+                    <div class="cap">
+                      <div class="capT">想和老婆从视频走到线下</div>
+                      <div class="capS">想把这一刻存成永久收藏。</div>
+                    </div>
+                  </div>
+                  <div class="media">
+                    <img src="回忆3.jpg" alt="回忆3">
+                    <div class="cap">
+                      <div class="capT">想一直看着老婆</div>
+                      <div class="capS">你负责可爱，我负责心动。</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mediaGrid" style="margin-top:12px">
+                  <div class="media">
+                    <img src="回忆4.jpg" alt="回忆4">
+                    <div class="cap">
+                      <div class="capT">你一直都是那么漂亮，过去，当下以及未来</div>
+                      <div class="capS">虽然错过了过去的你，我更想牢牢抓住现在的你，走向我们的未来。</div>
+                    </div>
+                  </div>
+                  <div class="media">
+                    <img src="回忆5.jpg" alt="回忆5">
+                    <div class="cap">
+                      <div class="capT">那是第一次看你扎双马尾，让我发呆</div>
+                      <div class="capS">马尾如两束春风， 一束落在你耳畔， 一束住进我眼里。</div>
+                    </div>
+                  </div>
+                  <div class="media">
+                    <img src="回忆6.jpg" alt="回忆6">
+                    <div class="cap">
+                      <div class="capT">也是我第一次看你剪刘海</div>
+                      <div class="capS">一剪斜月落眉弯 ，半卷青丝半遮颜，我问春风借一句 ，说这是人间最可爱。</div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="cardInner">
+            <div class="cardHead">
+              <div class="icon">🎬</div>
+              <div style="flex:1">
+                <div class="ctitle">视频墙</div>
+                <div class="csub">想你就点开看。</div>
+
+                <div class="row3" style="margin-top:12px">
+                  <div class="media">
+                    <video controls preload="metadata" src="回忆7.mp4"></video>
+                    <div class="cap">
+                      <div class="capT">老婆俏皮，眼神灵动</div>
+                      <div class="capS">想老婆了就看视频呢</div>
+                    </div>
+                  </div>
+                  <div class="media">
+                    <video controls preload="metadata" src="回忆8.mp4"></video>
+                    <div class="cap">
+                      <div class="capT">想喂老婆，照顾老婆</div>
+                      <div class="capS">喜欢老婆吃东西的样子——可爱。</div>
+                    </div>
+                  </div>
+                  <div class="media">
+                    <video controls preload="metadata" src="回忆9.mp4"></video>
+                    <div class="cap">
+                      <div class="capT">小猫媳妇，甚是喜欢。</div>
+                      <div class="capS">想天天听老婆在我耳边喵喵。</div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="cardInner">
+            <div class="cardHead">
+              <div class="icon">❤️</div>
+              <div style="flex:1">
+                <div class="ctitle">小小誓言</div>
+                <div class="csub">不腻，但很真。</div>
+
+                <div class="row3" style="margin-top:12px">
+                  <div class="softBox">
+                    <div class="softTitle">我会记得</div>
+                    <div class="softText">你说过的小事、你爱吃的味道、你 03-19 的生日。</div>
+                  </div>
+                  <div class="softBox">
+                    <div class="softTitle">我会做到</div>
+                    <div class="softText">把你放在优先级里（不是嘴上，是日常里）。</div>
+                  </div>
+                  <div class="softBox">
+                    <div class="softTitle">我会一直</div>
+                    <div class="softText">和你一起，把平凡过得像礼物。</div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <div><b>❤️ Made with love</b></div>
+      <div style="margin-top:8px">给晓玲的小世界。</div>
+    </footer>
+  </div>
+
+  <script>
+    const LOVE_START = new Date("2025-11-15T00:00:00");
+    const BIRTHDAY_MONTH = 3;
+    const BIRTHDAY_DAY = 19;
+
+    const QUOTES = [
+      "你一笑，我的世界就开灯了。",
+      "今天的你：可爱值 +999。",
+      "我负责认真爱你，你负责开心就好。",
+      "本日好运：和你一起。",
+      "想你这件事，永远不需要排期。",
+      "我不是恋爱脑，我是你脑。",
+      "你一出现，我就自动变乖。",
+      "喜欢你这件事，永远都不嫌多。"
+    ];
+
+    const POEMS = [
+      { head:"武平一 ·《杂曲歌辞》", text:"疑是仙女下凡来，回眸一笑胜星华。" },
+      { head:"世间杂谈", text:"远赴人间惊鸿宴，一睹人间盛世颜。" },
+      { head:"王国维 ·《蝶恋花》", text:"众里嫣然通一顾，人间颜色如尘土。" },
+      { head:"韦庄 ·《菩萨蛮》", text:"垆边人似月，皓腕凝霜雪。" },
+      { head:"昆曲 ·《牡丹亭·惊梦》", text:"沉鱼落雁鸟惊喧，羞花闭月花愁颤。" },
+      { head:"白居易 ·《长恨歌》", text:"回眸一笑百媚生，六宫粉黛无颜色。" },
+      { head:"李白 ·《清平调》", text:"云想衣裳花想容，春风拂槛露华浓。" },
+      { head:"杜甫 ·《佳人》", text:"绝代有佳人，幽居在空谷。" },
+      { head:"曹植 ·《洛神赋》", text:"翩若惊鸿，婉若游龙。" },
+      { head:"自家小诗", text:"你一抬眼，星河都改道；你一微笑，春风都认输。" },
+      { head:"自家小诗", text:"见你如见春日初晴，万物都温柔得有理有据。" }
+    ];
+
+    const PLAYLIST = [
+      { title: "下雨时候特别想你", artist: "陈壹千", file: "下雨时候特别想你 - 陈壹千.mp3" },
+      { title: "倒影", artist: "蓝心羽", file: "倒影 - 蓝心羽.mp3" },
+      { title: "有些", artist: "yihuik苡慧", file: "有些-yihuik苡慧.mp3" },
+      { title: "Dear D", artist: "项睿娴", file: "Dear D .mp3" }
+    ];
+
+    const pad2 = (n) => String(n).padStart(2, "0");
+    function formatDuration(ms){
+      const s = Math.max(0, Math.floor(ms/1000));
+      const days = Math.floor(s/86400);
+      const hours = Math.floor((s%86400)/3600);
+      const mins = Math.floor((s%3600)/60);
+      const secs = s%60;
+      return {days, hours, mins, secs};
+    }
+    function startOfDay(d){ return new Date(d.getFullYear(), d.getMonth(), d.getDate(), 0,0,0); }
+    function nextBirthday(from=new Date()){
+      const y = from.getFullYear();
+      const thisYear = new Date(y, BIRTHDAY_MONTH-1, BIRTHDAY_DAY, 0,0,0);
+      if (thisYear.getTime() >= startOfDay(from).getTime()) return thisYear;
+      return new Date(y+1, BIRTHDAY_MONTH-1, BIRTHDAY_DAY, 0,0,0);
+    }
+    function fmtTime(sec){
+      if(!isFinite(sec) || sec < 0) return "00:00";
+      const m = Math.floor(sec/60);
+      const s = Math.floor(sec%60);
+      return `${pad2(m)}:${pad2(s)}`;
+    }
+    function todayKey(){
+      const d = new Date();
+      return `${d.getFullYear()}-${pad2(d.getMonth()+1)}-${pad2(d.getDate())}`;
+    }
+    function dateToDays(str){
+      const [y,m,d] = str.split("-").map(n=>parseInt(n,10));
+      return Math.floor(new Date(y, m-1, d).getTime()/86400000);
+    }
+    const wait = (ms)=>new Promise(r=>setTimeout(r, ms));
+
+    // Tabs
+    const tabs = document.querySelectorAll(".tab");
+    const panels = {
+      home: document.getElementById("panel-home"),
+      fun: document.getElementById("panel-fun"),
+      memory: document.getElementById("panel-memory")
+    };
+    function setTab(id){
+      tabs.forEach(t => t.classList.toggle("active", t.dataset.tab === id));
+      Object.entries(panels).forEach(([k,el]) => el.style.display = (k===id ? "" : "none"));
+      window.scrollTo({top:0,behavior:"smooth"});
+    }
+    tabs.forEach(t => t.addEventListener("click", () => setTab(t.dataset.tab)));
+    document.getElementById("btnGoFun").addEventListener("click", () => setTab("fun"));
+
+    // Floating hearts
+    const floatLayer = document.getElementById("floatLayer");
+    function boom(){
+      const count = 18;
+      for(let i=0;i<count;i++){
+        const el = document.createElement("div");
+        el.className = "heart";
+        el.textContent = ["💗","💖","💞","💕","💘"][i%5];
+        el.style.left = (Math.random()*100).toFixed(2) + "%";
+        el.style.top = (-10 - Math.random()*30).toFixed(0) + "px";
+        el.style.animationDuration = (1.6 + Math.random()*0.9).toFixed(2) + "s";
+        el.style.fontSize = (18 + Math.random()*16).toFixed(0) + "px";
+        floatLayer.appendChild(el);
+        setTimeout(()=>el.remove(), 2400);
+      }
+    }
+    document.getElementById("btnBoom").addEventListener("click", boom);
+    document.getElementById("btnBoom2").addEventListener("click", boom);
+
+    // Timers
+    const loveDays = document.getElementById("loveDays");
+    const loveHours = document.getElementById("loveHours");
+    const loveMins = document.getElementById("loveMins");
+    const loveSecs = document.getElementById("loveSecs");
+    const bdDays = document.getElementById("bdDays");
+    const bdHours = document.getElementById("bdHours");
+    const bdMins = document.getElementById("bdMins");
+    const bdSecs = document.getElementById("bdSecs");
+    const nextBdayDate = document.getElementById("nextBdayDate");
+
+    function tick(){
+      const now = new Date();
+      const love = formatDuration(now - LOVE_START);
+      loveDays.textContent = love.days;
+      loveHours.textContent = love.hours;
+      loveMins.textContent = love.mins;
+      loveSecs.textContent = love.secs;
+
+      const nb = nextBirthday(now);
+      nextBdayDate.textContent = `${nb.getFullYear()}-${pad2(nb.getMonth()+1)}-${pad2(nb.getDate())}`;
+      const bd = formatDuration(nb - now);
+      bdDays.textContent = bd.days;
+      bdHours.textContent = bd.hours;
+      bdMins.textContent = bd.mins;
+      bdSecs.textContent = bd.secs;
+    }
+    tick();
+    setInterval(tick, 1000);
+
+    // ===== Check-in =====
+    const LS_CHECK = "val_checkin_v1";
+    const streakEl = document.getElementById("streak");
+    const totalChecksEl = document.getElementById("totalChecks");
+    const logEl = document.getElementById("checkLog");
+    const btnCheckin = document.getElementById("btnCheckin");
+    const btnCheckinNote = document.getElementById("btnCheckinNote");
+    const rewardLine = document.getElementById("rewardLine");
+    const rewardBar = document.getElementById("rewardBar");
+    const nextReward = document.getElementById("nextReward");
+
+    function loadCheck(){
+      try{
+        const raw = localStorage.getItem(LS_CHECK);
+        if(!raw) return { last:null, streak:0, total:0, logs:[] };
+        const x = JSON.parse(raw);
+        return {
+          last: x.last || null,
+          streak: Number(x.streak||0),
+          total: Number(x.total||0),
+          logs: Array.isArray(x.logs) ? x.logs.slice(0,60) : []
+        };
+      }catch(_){
+        return { last:null, streak:0, total:0, logs:[] };
+      }
+    }
+    function saveCheck(x){ localStorage.setItem(LS_CHECK, JSON.stringify(x)); }
+
+    let check = loadCheck();
+
+    function rewardState(streak){
+      const tiers = [
+        {d:3,  t:"连签 3 天：奖励一个大抱抱（有效期：随时）。"},
+        {d:7,  t:"连签 7 天：奖励一个“想你就贴贴”特权。"},
+        {d:14, t:"连签 14 天：奖励一顿你想吃的（你说了算）。"},
+        {d:30, t:"连签 30 天：奖励一个认真到不行的约会日。"}
+      ];
+      for(const it of tiers){
+        if(streak < it.d) return {next: it.d, text: it.t, pct: Math.max(0, (streak/it.d)*100)};
+      }
+      return {next: 30, text:"连签满格：你已经是被宠到发光的那种了。", pct: 100};
+    }
+
+    function renderCheck(){
+      streakEl.textContent = check.streak;
+      totalChecksEl.textContent = check.total;
+
+      const t = todayKey();
+      const already = (check.last === t);
+      btnCheckin.disabled = already;
+      btnCheckin.textContent = already ? "今天已签到" : "今天签到";
+
+      const rs = rewardState(check.streak);
+      nextReward.textContent = rs.next;
+      rewardLine.textContent = rs.text;
+      rewardBar.style.width = rs.pct + "%";
+
+      logEl.innerHTML = "";
+      if(check.logs.length === 0){
+        logEl.innerHTML = `<div class="logItem"><div class="logDate">还没有记录</div><div>今天点一下，把小开心存下来。</div></div>`;
+        return;
+      }
+      check.logs.slice(0,10).forEach(item=>{
+        const div = document.createElement("div");
+        div.className = "logItem";
+        div.innerHTML = `<div class="logDate">${item.date}</div><div>${item.text}</div>`;
+        logEl.appendChild(div);
+      });
+    }
+
+    function doCheckin(noteText){
+      const t = todayKey();
+      if(check.last === t) return false;
+
+      const msg = noteText && noteText.trim()
+        ? noteText.trim()
+        : ["今天也很喜欢你。","今天也想你。","今天也要幸福。","今天也想抱抱你。","今天也被你治愈了。"][Math.floor(Math.random()*5)];
+
+      if(check.last){
+        const delta = dateToDays(t) - dateToDays(check.last);
+        if(delta === 1) check.streak += 1;
+        else check.streak = 1;
+      }else{
+        check.streak = 1;
+      }
+
+      check.total += 1;
+      check.last = t;
+      check.logs.unshift({ date: t, text: msg });
+      check.logs = check.logs.slice(0,60);
+      saveCheck(check);
+      renderCheck();
+      boom();
+      return true;
+    }
+
+    btnCheckin.addEventListener("click", ()=>doCheckin(""));
+    btnCheckinNote.addEventListener("click", ()=>{
+      const v = prompt("写一句今天的小开心：");
+      if(v === null) return;
+      doCheckin(v);
+    });
+    renderCheck();
+
+    // ===== PET =====
+    const LS_PET = "val_pet_v5";
+    const petAffEl = document.getElementById("petAff");
+    const petFullEl = document.getElementById("petFull");
+    const petMoodEl = document.getElementById("petMood");
+    const petLvEl = document.getElementById("petLv");
+    const petXpEl = document.getElementById("petXp");
+    const petXpMaxEl = document.getElementById("petXpMax");
+    const petBarEl = document.getElementById("petBar");
+    const petLineEl = document.getElementById("petLine");
+    const petCardEl = document.getElementById("petCard");
+    const petToastEl = document.getElementById("petToast");
+    const petSpriteEl = document.getElementById("petSprite");
+    const petBowEl = document.getElementById("petBow");
+    const sfxStateEl = document.getElementById("sfxState");
+    const petNameEl = document.getElementById("petName");
+    const petOverlaySpark = document.getElementById("petOverlaySpark");
+    const petWings = document.getElementById("petWings");
+    const petCrown = document.getElementById("petCrown");
+    const petStrawHat = document.getElementById("petStrawHat");
+
+    function loadPet(){
+      try{
+        const raw = localStorage.getItem(LS_PET);
+        if(!raw) return { aff:0, full:62, mood:3, last: Date.now(), sfx:true, lv:1, xp:0, form: "milk" };
+        const p = JSON.parse(raw);
+        return {
+          aff: Number(p.aff||0),
+          full: Math.max(0, Math.min(100, Number(p.full ?? 62))),
+          mood: Math.max(0, Math.min(5, Number(p.mood ?? 3))),
+          last: Number(p.last||Date.now()),
+          sfx: (p.sfx !== false),
+          lv: Math.max(1, Number(p.lv||1)),
+          xp: Math.max(0, Number(p.xp||0)),
+          form: p.form || "milk"
+        };
+      }catch(_){
+        return { aff:0, full:62, mood:3, last: Date.now(), sfx:true, lv:1, xp:0, form: "milk" };
+      }
+    }
+    function savePet(p){ localStorage.setItem(LS_PET, JSON.stringify(p)); }
+    let pet = loadPet();
+
+    function xpMax(lv){ return 10 + lv*5; }
+    function clampPet(){
+      pet.full = Math.max(0, Math.min(100, pet.full));
+      pet.mood = Math.max(0, Math.min(5, pet.mood));
+      pet.lv = Math.max(1, pet.lv);
+      pet.xp = Math.max(0, pet.xp);
+    }
+    function decayPet(){
+      const now = Date.now();
+      const hours = (now - pet.last) / 3600000;
+      if(hours > 0.1){
+        const drop = Math.min(26, Math.floor(hours * 2.2));
+        pet.full = Math.max(0, pet.full - drop);
+        if(pet.full < 18) pet.mood = Math.max(0, pet.mood - 1);
+        pet.last = now;
+        savePet(pet);
+      }
+    }
+
+    let audioCtx = null;
+    function ensureAudio(){
+      if(!audioCtx){
+        const AC = window.AudioContext || window.webkitAudioContext;
+        audioCtx = new AC();
+      }
+      if(audioCtx.state === "suspended") audioCtx.resume();
+    }
+    function tone({freq=880, type="sine", dur=0.08, gain=0.11, slideTo=null}){
+      if(!pet.sfx) return;
+      ensureAudio();
+      const t0 = audioCtx.currentTime;
+      const o = audioCtx.createOscillator();
+      const g = audioCtx.createGain();
+      o.type = type;
+      o.frequency.setValueAtTime(freq, t0);
+      if(slideTo) o.frequency.exponentialRampToValueAtTime(slideTo, t0 + dur);
+      g.gain.setValueAtTime(0.0001, t0);
+      g.gain.exponentialRampToValueAtTime(gain, t0 + 0.01);
+      g.gain.exponentialRampToValueAtTime(0.0001, t0 + dur);
+      o.connect(g).connect(audioCtx.destination);
+      o.start(t0);
+      o.stop(t0 + dur + 0.02);
+    }
+    function trill(freqs, opts={}){
+      const {type="sine", dur=0.06, gain=0.11, gap=0.015, slide=false} = opts;
+      let t = 0;
+      freqs.forEach((f)=>{
+        setTimeout(()=>tone({freq:f,type,dur,gain,slideTo: slide ? (f*1.15) : null}), t*1000);
+        t += (dur + gap);
+      });
+    }
+    function mew(style="soft"){
+      if(!pet.sfx) return;
+      if(style==="happy"){
+        trill([784,988,1175], {type:"triangle", dur:0.06, gain:0.12, slide:true});
+        setTimeout(()=>tone({freq:1568,type:"sine",dur:0.08,gain:0.09,slideTo:1760}), 220);
+      }else if(style==="wow"){
+        trill([523,784,1175,1568], {type:"sine", dur:0.05, gain:0.12});
+      }else if(style==="love"){
+        trill([659,784,988], {type:"triangle", dur:0.08, gain:0.10});
+        setTimeout(()=>tone({freq:523,type:"sine",dur:0.10,gain:0.08,slideTo:440}), 260);
+      }else if(style==="chomp"){
+        trill([880,740,880], {type:"square", dur:0.04, gain:0.08});
+        setTimeout(()=>tone({freq:660,type:"triangle",dur:0.06,gain:0.08,slideTo:520}), 160);
+      }else{
+        trill([659,784], {type:"sine", dur:0.07, gain:0.09});
+      }
+    }
+
+    function toast(text){
+      petToastEl.textContent = text;
+      petToastEl.classList.add("show");
+      setTimeout(()=>petToastEl.classList.remove("show"), 950);
+    }
+    function particles(emojis=["✨","💗"], n=8){
+      for(let i=0;i<n;i++){
+        const p = document.createElement("div");
+        p.className = "particle";
+        p.textContent = emojis[i % emojis.length];
+        const dx = (Math.random()*120 - 60).toFixed(0) + "px";
+        const dy = (-Math.random()*120 - 10).toFixed(0) + "px";
+        p.style.setProperty("--dx", dx);
+        p.style.setProperty("--dy", dy);
+        petCardEl.appendChild(p);
+        setTimeout(()=>p.remove(), 1150);
+      }
+    }
+    function foodFly(emoji){
+      const f = document.createElement("div");
+      f.className = "foodFly";
+      f.textContent = emoji;
+      petCardEl.appendChild(f);
+      setTimeout(()=>f.remove(), 720);
+    }
+    function xpFX(){
+      petOverlaySpark.classList.remove("play");
+      void petOverlaySpark.offsetWidth;
+      petOverlaySpark.classList.add("play");
+
+      petSpriteEl.classList.remove("xpPulse");
+      void petSpriteEl.offsetWidth;
+      petSpriteEl.classList.add("xpPulse");
+      setTimeout(()=>petSpriteEl.classList.remove("xpPulse"), 600);
+    }
+
+    function setState(state){
+      petSpriteEl.classList.remove("idle","sleepy","love","wow","yum","sparkle");
+      petSpriteEl.classList.add(state);
+    }
+    function addAction(cls){
+      petSpriteEl.classList.remove("act-chomp","act-spin","act-hop","act-wiggle","act-paw");
+      void petSpriteEl.offsetWidth;
+      petSpriteEl.classList.add(cls);
+      setTimeout(()=>petSpriteEl.classList.remove(cls), 980);
+    }
+
+    function applyEvolution(){
+      if(pet.lv >= 6) pet.form = "strawberry";
+      else if(pet.lv >= 4) pet.form = "fairy";
+      else if(pet.lv >= 3) pet.form = "cotton";
+      else pet.form = "milk";
+
+      if(pet.form === "milk"){
+        petNameEl.textContent = "奶糖";
+        petSpriteEl.style.setProperty("--petHue", "0deg");
+        petSpriteEl.style.setProperty("--petSat", "100%");
+        petSpriteEl.style.setProperty("--petBright", "100%");
+      }else if(pet.form === "cotton"){
+        petNameEl.textContent = "棉花糖";
+        petSpriteEl.style.setProperty("--petHue", "18deg");
+        petSpriteEl.style.setProperty("--petSat", "120%");
+        petSpriteEl.style.setProperty("--petBright", "105%");
+      }else if(pet.form === "fairy"){
+        petNameEl.textContent = "小精灵";
+        petSpriteEl.style.setProperty("--petHue", "330deg");
+        petSpriteEl.style.setProperty("--petSat", "135%");
+        petSpriteEl.style.setProperty("--petBright", "110%");
+      }else{
+        petNameEl.textContent = "草莓精灵";
+        petSpriteEl.style.setProperty("--petHue", "350deg");
+        petSpriteEl.style.setProperty("--petSat", "155%");
+        petSpriteEl.style.setProperty("--petBright", "112%");
+      }
+
+      petBowEl.style.opacity = (pet.lv >= 2) ? "1" : "0";
+      petWings.style.opacity = (pet.lv >= 4) ? "1" : "0";
+      petCrown.style.opacity = (pet.lv >= 5) ? "1" : "0";
+      petStrawHat.style.opacity = (pet.lv >= 6) ? "1" : "0";
+      savePet(pet);
+    }
+
+    function renderPet(){
+      const max = xpMax(pet.lv);
+      petAffEl.textContent = pet.aff;
+      petFullEl.textContent = pet.full;
+      petMoodEl.textContent = pet.mood;
+      petLvEl.textContent = pet.lv;
+      petXpEl.textContent = pet.xp;
+      petXpMaxEl.textContent = max;
+      petBarEl.style.width = Math.max(0, Math.min(100, pet.full)) + "%";
+      sfxStateEl.textContent = pet.sfx ? "音效开" : "音效关";
+
+      if(pet.full <= 15 || pet.mood <= 1) setState("sleepy");
+      else setState("idle");
+    }
+
+    decayPet(); clampPet(); applyEvolution(); renderPet();
+    setInterval(()=>{ decayPet(); renderPet(); }, 12000);
+
+    let petBusy = false;
+    async function doPetReaction(r){
+      if(petBusy) return;
+      petBusy = true;
+
+      const beforeXp = pet.xp;
+      const beforeLv = pet.lv;
+
+      pet.full += r.gain.full;
+      pet.mood += r.gain.mood;
+      pet.aff  += r.gain.aff;
+      pet.xp   += r.gain.xp;
+      pet.last = Date.now();
+
+      clampPet();
+
+      if(r.gain.xp > 0 || pet.xp !== beforeXp){
+        xpFX();
+        particles(["✨","💗"], 6);
+      }
+
+      while(pet.xp >= xpMax(pet.lv)){
+        pet.xp -= xpMax(pet.lv);
+        pet.lv += 1;
+
+        applyEvolution();
+        toast(`⭐ 升级啦！Lv.${pet.lv}`);
+        particles(["⭐","✨","💖"], 12);
+        mew("wow");
+        addAction("act-spin");
+        await wait(420);
+      }
+
+      if(pet.lv !== beforeLv){
+        petOverlaySpark.classList.remove("play");
+        void petOverlaySpark.offsetWidth;
+        petOverlaySpark.classList.add("play");
+        boom();
+      }
+
+      savePet(pet);
+      renderPet();
+
+      toast(r.toast);
+      foodFly(r.emoji);
+
+      setState(r.state1);
+      if(r.action) addAction(r.action);
+      if(r.sfx) r.sfx();
+      petLineEl.textContent = r.lines[Math.floor(Math.random()*r.lines.length)];
+
+      if(r.particles) particles(r.particles.emojis, r.particles.n);
+
+      await wait(r.beatMs || 520);
+
+      if(r.state2) setState(r.state2);
+      if(r.extra){
+        petLineEl.textContent = r.extra.lines[Math.floor(Math.random()*r.extra.lines.length)];
+        if(r.extra.sfx) r.extra.sfx();
+        if(r.extra.action) addAction(r.extra.action);
+        if(r.extra.particles) particles(r.extra.particles.emojis, r.extra.particles.n);
+      }
+
+      await wait(520);
+      renderPet();
+      petBusy = false;
+    }
+
+    const R = {
+      straw: {
+        emoji:"🍓",
+        toast:"🍓 草莓投喂成功！",
+        gain:{full:24, mood:2, aff:3, xp:5},
+        state1:"wow",
+        action:"act-hop",
+        sfx: ()=>{ mew("wow"); setTimeout(()=>mew("happy"), 220); },
+        lines:[
+          "🍓！！命定草莓！我宣布：今天你最最好！",
+          "草莓一入口，我就想原地转圈圈～",
+          "这味道…我懂了：这是“晓玲最爱”的味道！"
+        ],
+        particles:{emojis:["🍓","💖","✨"], n:10},
+        beatMs: 480,
+        state2:"sparkle",
+        extra:{
+          lines:[
+            "我眼睛都在发光：再来一颗就抱你一下！",
+            "我现在甜到想贴贴～",
+            "我想把快乐分你一半（另一半也给你）。"
+          ],
+          sfx: ()=>{ mew("happy"); },
+          action:"act-paw",
+          particles:{emojis:["💗","✨"], n:8}
+        }
+      },
+      cake: {
+        emoji:"🍰",
+        toast:"🍰 小蛋糕投喂成功！",
+        gain:{full:18, mood:2, aff:2, xp:4},
+        state1:"yum",
+        action:"act-chomp",
+        sfx: ()=>{ mew("chomp"); },
+        lines:[
+          "嗯嗯嗯！奶油香香～我好幸福。",
+          "蛋糕甜甜的…像你对晓玲的那种甜。",
+          "我吃到了！我也想让你开心一点点。"
+        ],
+        particles:{emojis:["✨","💞"], n:7},
+        beatMs: 560,
+        state2:"love",
+        extra:{
+          lines:[
+            "我甜到想抱抱你（先抱一下！）",
+            "贴贴贴贴～今天不许难过。",
+            "你给我甜，我给你可爱。成交！"
+          ],
+          sfx: ()=>{ mew("love"); },
+          action:"act-wiggle",
+          particles:{emojis:["💘","💗"], n:8}
+        }
+      },
+      fish: {
+        emoji:"🐟",
+        toast:"🐟 小鱼干投喂成功！",
+        gain:{full:20, mood:1, aff:2, xp:4},
+        state1:"yum",
+        action:"act-chomp",
+        sfx: ()=>{ mew("chomp"); tone({freq:440,type:"sine",dur:0.09,gain:0.08,slideTo:520}); },
+        lines:[
+          "嚼嚼嚼～这鱼干有点上头！",
+          "我吃得很认真…因为你投喂得很认真。",
+          "鱼干到位！我恢复元气啦～"
+        ],
+        particles:{emojis:["✨","🫧"], n:6},
+        beatMs: 520,
+        state2:"idle",
+        extra:{
+          lines:[
+            "我准备好了！随时为你卖萌。",
+            "我尾巴都摇成螺旋桨了！",
+            "如果想晓玲了，我也陪你一起想。"
+          ],
+          sfx: ()=>{ mew("soft"); },
+          action:"act-paw",
+          particles:{emojis:["✨"], n:5}
+        }
+      },
+      milk: {
+        emoji:"🥛",
+        toast:"🥛 牛奶投喂成功！暖呼呼～",
+        gain:{full:14, mood:1, aff:1, xp:3},
+        state1:"yum",
+        action:"act-hop",
+        sfx: ()=>{ mew("soft"); trill([523,659,784], {type:"sine", dur:0.07, gain:0.10}); },
+        lines:[
+          "咕咚咕咚～暖暖的，好舒服。",
+          "牛奶补充能量！我又精神啦～",
+          "我喝完啦！你也要好好照顾自己哦。"
+        ],
+        particles:{emojis:["🫧","✨"], n:6},
+        beatMs: 520,
+        state2:"idle"
+      },
+      pat: {
+        emoji:"🤲",
+        toast:"🤲 摸摸头成功！",
+        gain:{full:0, mood:2, aff:2, xp:3},
+        state1:"love",
+        action:"act-wiggle",
+        sfx: ()=>{ mew("love"); },
+        lines:[
+          "啊啊啊被摸头了！我宣布：你是全世界最会宠人的！",
+          "摸摸就会变开心…我好容易满足。",
+          "再摸一下…我就要粘你一整天。"
+        ],
+        particles:{emojis:["💗","✨"], n:8},
+        beatMs: 540,
+        state2:"sparkle",
+        extra:{
+          lines:[
+            "我现在超级乖！请夸我一下～",
+            "贴贴贴贴～我想陪着你。",
+            "你宠我，我就替你把烦恼咬走。"
+          ],
+          sfx: ()=>{ mew("happy"); },
+          action:"act-paw",
+          particles:{emojis:["💞","✨"], n:7}
+        }
+      },
+      hug: {
+        emoji:"🫶",
+        toast:"🫶 抱抱成功！",
+        gain:{full:0, mood:2, aff:3, xp:4},
+        state1:"love",
+        action:"act-spin",
+        sfx: ()=>{ mew("love"); setTimeout(()=>mew("happy"), 240); },
+        lines:[
+          "抱抱！！我现在是最幸福的小东西。",
+          "贴贴贴贴～不许松手。",
+          "被你抱住的这一秒，世界都变软了。"
+        ],
+        particles:{emojis:["💖","💗","✨"], n:10},
+        beatMs: 520,
+        state2:"sparkle"
+      }
+    };
+
+    document.getElementById("btnStraw").addEventListener("click", ()=>doPetReaction(R.straw));
+    document.getElementById("btnCake").addEventListener("click", ()=>doPetReaction(R.cake));
+    document.getElementById("btnFish").addEventListener("click", ()=>doPetReaction(R.fish));
+    document.getElementById("btnMilk").addEventListener("click", ()=>doPetReaction(R.milk));
+    document.getElementById("btnPat").addEventListener("click", ()=>doPetReaction(R.pat));
+    document.getElementById("btnHug").addEventListener("click", ()=>doPetReaction(R.hug));
+
+    document.getElementById("btnSfx").addEventListener("click", ()=>{
+      pet.sfx = !pet.sfx;
+      savePet(pet);
+      renderPet();
+      if(pet.sfx){ mew("soft"); }
+    });
+
+    // ===== Cookie + jar + mood =====
+    const LS_JAR = "val_cookie_jar_v1";
+    const cookieText = document.getElementById("cookieText");
+    const btnCookie = document.getElementById("btnCookie");
+    const btnCopy = document.getElementById("btnCopy");
+    const cookieLinkTip = document.getElementById("cookieLinkTip");
+    const btnUseForCheckin = document.getElementById("btnUseForCheckin");
+    const jarEl = document.getElementById("jar");
+    const btnClearJar = document.getElementById("btnClearJar");
+    const moodRange = document.getElementById("moodRange");
+    const moodVal = document.getElementById("moodVal");
+    const moodHint = document.getElementById("moodHint");
+
+    let cookieValue = "";
+
+    function loadJar(){
+      try{
+        const raw = localStorage.getItem(LS_JAR);
+        if(!raw) return [];
+        const a = JSON.parse(raw);
+        return Array.isArray(a) ? a.slice(0,12) : [];
+      }catch(_){ return []; }
+    }
+    function saveJar(a){ localStorage.setItem(LS_JAR, JSON.stringify(a.slice(0,12))); }
+
+    let jar = loadJar();
+
+    function renderJar(){
+      jarEl.innerHTML = "";
+      if(jar.length === 0){
+        jarEl.innerHTML = `<div class="jarItem"><span>还没有收藏～</span><span>🫙</span></div>`;
+        return;
+      }
+      jar.forEach((t, idx)=>{
+        const row = document.createElement("div");
+        row.className = "jarItem";
+        const left = document.createElement("div");
+        left.textContent = t;
+        left.style.flex = "1";
+        left.style.minWidth = "0";
+        const right = document.createElement("div");
+        right.style.display = "flex";
+        right.style.gap = "8px";
+        const b1 = document.createElement("button");
+        b1.className = "btnSoft";
+        b1.textContent = "回填";
+        b1.onclick = ()=>{
+          cookieValue = t;
+          cookieText.textContent = cookieValue;
+          btnCopy.disabled = false;
+          btnUseForCheckin.disabled = false;
+        };
+        const b2 = document.createElement("button");
+        b2.className = "btnSoft";
+        b2.textContent = "复制";
+        b2.onclick = async ()=>{
+          try{ await navigator.clipboard.writeText(t); }catch(e){}
+        };
+        right.appendChild(b1);
+        right.appendChild(b2);
+        row.appendChild(left);
+        row.appendChild(right);
+        jarEl.appendChild(row);
+      });
+    }
+    renderJar();
+
+    function refreshCookieLinkTip(){
+      const t = todayKey();
+      const already = (check.last === t);
+      cookieLinkTip.textContent = already
+        ? "开饼干会让小宠物更开心一点点。"
+        : "开饼干会让小宠物更开心一点点；今天还没签到也可以顺便记下来。";
+    }
+    refreshCookieLinkTip();
+
+    btnCookie.addEventListener("click", async () => {
+      cookieValue = QUOTES[Math.floor(Math.random()*QUOTES.length)];
+      cookieText.textContent = cookieValue;
+      btnCopy.disabled = false;
+      btnUseForCheckin.disabled = false;
+
+      jar = [cookieValue, ...jar.filter(x=>x!==cookieValue)].slice(0,12);
+      saveJar(jar);
+      renderJar();
+
+      await doPetReaction({
+        emoji:"🍪",
+        toast:"🍪 饼干打开了！",
+        gain:{full:0, mood:1, aff:1, xp:2},
+        state1:"sparkle",
+        action:"act-paw",
+        sfx: ()=>{ mew("happy"); },
+        lines:[
+          "我也想听你多说一点点～",
+          "这个饼干甜甜的，像你对她的那种甜。",
+          "我收到了！我负责把可爱加倍。"
+        ],
+        particles:{emojis:["🍪","✨","💗"], n:8},
+        beatMs: 420,
+        state2:"idle"
+      });
+
+      const t = todayKey();
+      if(check.last !== t){
+        cookieLinkTip.textContent = "今天还没签到呢：点「用作今天签到」，把这句小开心存下来。";
+      }else{
+        refreshCookieLinkTip();
+      }
+    });
+
+    btnCopy.addEventListener("click", async () => {
+      if(!cookieValue) return;
+      try{
+        await navigator.clipboard.writeText(cookieValue);
+        btnCopy.textContent = "✅ 已复制";
+        setTimeout(()=>btnCopy.textContent="📋 复制给他", 1200);
+      }catch(e){}
+    });
+
+    btnUseForCheckin.addEventListener("click", ()=>{
+      if(!cookieValue) return;
+      const ok = doCheckin(cookieValue);
+      if(ok){
+        btnUseForCheckin.textContent = "✅ 已记录";
+        setTimeout(()=>btnUseForCheckin.textContent="✅ 用作今天签到", 1200);
+        refreshCookieLinkTip();
+      }else{
+        btnUseForCheckin.textContent = "今天已签到";
+        setTimeout(()=>btnUseForCheckin.textContent="✅ 用作今天签到", 1200);
+      }
+    });
+
+    btnClearJar.addEventListener("click", ()=>{
+      jar = [];
+      saveJar(jar);
+      renderJar();
+    });
+
+    moodRange.addEventListener("input", ()=>{
+      const v = Number(moodRange.value||0);
+      moodVal.textContent = v;
+      if(v >= 85) moodHint.textContent = "今天是会被宠到冒泡的一天。";
+      else if(v >= 60) moodHint.textContent = "刚刚好，甜甜的。";
+      else if(v >= 35) moodHint.textContent = "想要一点抱抱加温。";
+      else moodHint.textContent = "低温预警：需要立刻贴贴。";
+    });
+
+    // ===== Coupon =====
+    const coupons = [
+      {t:"抱抱券", s:"使用方式：张开手，我就过去。"},
+      {t:"贴贴券", s:"使用方式：靠近一点点，就会更开心。"},
+      {t:"亲亲券", s:"使用方式：轻轻一下，心就软了。"},
+      {t:"撒娇券", s:"使用方式：今天由你负责可爱。"},
+      {t:"投喂券", s:"使用方式：你想吃什么，我都想陪你。"},
+      {t:"听你说券", s:"使用方式：你说的每句话，我都想认真听。"},
+      {t:"牵手券", s:"使用方式：一起走，慢慢走，走很久。"},
+      {t:"偏爱券", s:"使用方式：今天也把你放第一。"}
+    ];
+    const couponT = document.getElementById("couponT");
+    const couponS = document.getElementById("couponS");
+    const btnCoupon = document.getElementById("btnCoupon");
+    const btnCouponUse = document.getElementById("btnCouponUse");
+    let curCoupon = null;
+
+    function rollCoupon(){
+      curCoupon = coupons[Math.floor(Math.random()*coupons.length)];
+      couponT.textContent = curCoupon.t;
+      couponS.textContent = curCoupon.s;
+    }
+    rollCoupon();
+
+    btnCoupon.addEventListener("click", ()=>{
+      rollCoupon();
+      boom();
+    });
+    btnCouponUse.addEventListener("click", async ()=>{
+      if(!curCoupon) return;
+      await doPetReaction({
+        emoji:"🎟️",
+        toast:"🎟️ 领取成功！",
+        gain:{full:0, mood:1, aff:2, xp:2},
+        state1:"love",
+        action:"act-wiggle",
+        sfx: ()=>{ mew("love"); },
+        lines:[
+          "我也同意！今天就这样宠她～",
+          "收到～我负责把气氛变甜。",
+          "好耶！我宣布：今天是被偏爱日。"
+        ],
+        particles:{emojis:["💘","✨","🎟️"], n:10},
+        beatMs: 420,
+        state2:"sparkle"
+      });
+      toast("去宠她吧。");
+    });
+
+    // Poem
+    const poemHead = document.getElementById("poemHead");
+    const poemText = document.getElementById("poemText");
+    function setPoem(){
+      const it = POEMS[Math.floor(Math.random()*POEMS.length)];
+      poemHead.textContent = it.head;
+      poemText.textContent = it.text;
+    }
+    document.getElementById("btnPoem").addEventListener("click", setPoem);
+    setPoem();
+
+    // ===== 18-photo Carousel (contain/cover toggle) =====
+    const CAR_TOTAL = 18;
+    const carIdxEl = document.getElementById("carIdx");
+    const carTotalEl = document.getElementById("carTotal");
+    const carImg = document.getElementById("carImg");
+    const carPrev = document.getElementById("carPrev");
+    const carNext = document.getElementById("carNext");
+    const carPlay = document.getElementById("carPlay");
+    const carDots = document.getElementById("carDots");
+    const carProg = document.getElementById("carProg");
+    const carProgFill = document.getElementById("carProgFill");
+    const carFit = document.getElementById("carFit");
+
+    carTotalEl.textContent = CAR_TOTAL;
+
+    let carI = 1;
+    let carAuto = true;
+    let carTimer = null;
+    let carTick = null;
+    const carIntervalMs = 2600;
+
+    let carModeFit = "contain";
+    function applyCarFit(){
+      carImg.style.objectFit = carModeFit;
+      carFit.textContent = (carModeFit === "contain") ? "完整显示" : "铺满画面";
+    }
+    applyCarFit();
+
+    function carSrc(i){ return `循环/${i}.jpg`; }
+    function renderDots(){
+      carDots.innerHTML = "";
+      for(let i=1;i<=CAR_TOTAL;i++){
+        const d = document.createElement("div");
+        d.className = "dot" + (i===carI ? " active" : "");
+        d.addEventListener("click", ()=>{
+          carI = i;
+          showCar();
+          if(carAuto) restartCar();
+        });
+        carDots.appendChild(d);
+      }
+    }
+    function showCar(){
+      carImg.src = carSrc(carI);
+      carIdxEl.textContent = carI;
+      [...carDots.children].forEach((x,idx)=>x.classList.toggle("active", idx+1===carI));
+      carProgFill.style.width = "0%";
+    }
+    function clearCar(){
+      if(carTimer) clearInterval(carTimer);
+      if(carTick) clearInterval(carTick);
+      carTimer = null; carTick = null;
+    }
+    function restartCar(){
+      clearCar();
+      let start = Date.now();
+      carTick = setInterval(()=>{
+        const p = Math.min(1, (Date.now()-start)/carIntervalMs);
+        carProgFill.style.width = (p*100) + "%";
+      }, 50);
+      carTimer = setInterval(()=>{
+        start = Date.now();
+        carI = (carI % CAR_TOTAL) + 1;
+        showCar();
+      }, carIntervalMs);
+    }
+
+    renderDots();
+    showCar();
+    restartCar();
+
+    carPrev.addEventListener("click", ()=>{
+      carI = (carI - 2 + CAR_TOTAL) % CAR_TOTAL + 1;
+      showCar();
+      if(carAuto) restartCar();
+      carAuto = false;
+      carPlay.textContent = "▶ 自动";
+    });
+    carNext.addEventListener("click", ()=>{
+      carI = (carI % CAR_TOTAL) + 1;
+      showCar();
+      if(carAuto) restartCar();
+      carAuto = false;
+      carPlay.textContent = "▶ 自动";
+    });
+    carPlay.addEventListener("click", ()=>{
+      carAuto = !carAuto;
+      if(carAuto){
+        carPlay.textContent = "⏸ 暂停";
+        restartCar();
+      }else{
+        carPlay.textContent = "▶ 自动";
+        clearCar();
+        carProgFill.style.width = "0%";
+      }
+    });
+    carProg.addEventListener("click", (e)=>{
+      const rect = carProg.getBoundingClientRect();
+      const pct = (e.clientX - rect.left) / rect.width;
+      const idx = Math.max(1, Math.min(CAR_TOTAL, Math.round(pct * (CAR_TOTAL-1) + 1)));
+      carI = idx;
+      showCar();
+      if(carAuto) restartCar();
+    });
+    carFit.addEventListener("click", ()=>{
+      carModeFit = (carModeFit === "contain") ? "cover" : "contain";
+      applyCarFit();
+    });
+
+    // ===== Game =====
+    const arena = document.getElementById("arena");
+    const btnGameStart = document.getElementById("btnGameStart");
+    const btnGameStop  = document.getElementById("btnGameStop");
+    const gameTimeEl = document.getElementById("gameTime");
+    const gameScoreEl = document.getElementById("gameScore");
+    const gameComboEl = document.getElementById("gameCombo");
+    const gameHint = document.getElementById("gameHint");
+
+    let gameRunning = false;
+    let gameTime = 30;
+    let gameScore = 0;
+    let gameCombo = 0;
+    let gameTimer = null;
+    let spawnTimer = null;
+
+    function resetGame(){
+      gameTime = 30;
+      gameScore = 0;
+      gameCombo = 0;
+      gameTimeEl.textContent = gameTime;
+      gameScoreEl.textContent = gameScore;
+      gameComboEl.textContent = gameCombo;
+      gameHint.textContent = "点到 💗 会加分。";
+      [...arena.querySelectorAll(".tapHeart")].forEach(n => n.remove());
+    }
+
+    function spawnHeart(){
+      if(!gameRunning) return;
+
+      const w = arena.clientWidth;
+      const h = arena.clientHeight;
+      const size = 54;
+
+      const el = document.createElement("div");
+      el.className = "tapHeart";
+      el.innerHTML = `<span class="emoji">${["💗","💖","💞","💕","💘"][Math.floor(Math.random()*5)]}</span>`;
+
+      const x = Math.max(8, Math.min(w - size - 8, Math.random() * (w - size)));
+      const y = Math.max(8, Math.min(h - size - 8, Math.random() * (h - size)));
+
+      el.style.left = x + "px";
+      el.style.top = y + "px";
+
+      const born = Date.now();
+      const life = 900 + Math.random()*700;
+      let removed = false;
+
+      el.addEventListener("click", ()=>{
+        if(!gameRunning || removed) return;
+        removed = true;
+        el.remove();
+
+        gameCombo++;
+        const bonus = Math.min(8, Math.floor(gameCombo/3));
+        gameScore += 1 + bonus;
+
+        gameScoreEl.textContent = gameScore;
+        gameComboEl.textContent = gameCombo;
+
+        gameHint.textContent = gameCombo >= 10 ? `连击 ${gameCombo}！` : `连击 ${gameCombo}`;
+        if(gameCombo % 7 === 0) boom();
+      });
+
+      arena.appendChild(el);
+
+      const checkI = setInterval(()=>{
+        if(removed) { clearInterval(checkI); return; }
+        if(Date.now() - born >= life){
+          removed = true;
+          el.remove();
+          clearInterval(checkI);
+          gameCombo = Math.max(0, gameCombo - 2);
+          gameComboEl.textContent = gameCombo;
+        }
+      }, 80);
+    }
+
+    function startGame(){
+      resetGame();
+      gameRunning = true;
+      btnGameStart.disabled = true;
+      btnGameStop.disabled = false;
+
+      gameTimer = setInterval(()=>{
+        gameTime--;
+        gameTimeEl.textContent = gameTime;
+        if(gameTime <= 0){
+          stopGame(true);
+        }
+      }, 1000);
+
+      spawnTimer = setInterval(spawnHeart, 380);
+      for(let i=0;i<4;i++) setTimeout(spawnHeart, i*120);
+    }
+
+    function stopGame(finished=false){
+      gameRunning = false;
+      btnGameStart.disabled = false;
+      btnGameStop.disabled = true;
+      if(gameTimer) clearInterval(gameTimer);
+      if(spawnTimer) clearInterval(spawnTimer);
+      gameTimer = null;
+      spawnTimer = null;
+
+      [...arena.querySelectorAll(".tapHeart")].forEach(n => n.remove());
+
+      if(finished){
+        let msg = "";
+        if(gameScore >= 60) msg = `离谱！${gameScore} 分！`;
+        else if(gameScore >= 35) msg = `${gameScore} 分！`;
+        else msg = `${gameScore} 分！再来一次～`;
+        gameHint.textContent = `结束：${msg}`;
+        boom();
+      }else{
+        gameHint.textContent = "已结束。";
+      }
+    }
+
+    btnGameStart.addEventListener("click", startGame);
+    btnGameStop.addEventListener("click", ()=>stopGame(false));
+
+    // ===== Music player =====
+    const audio = document.getElementById("audio");
+    const btnPrev = document.getElementById("btnPrev");
+    const btnNext = document.getElementById("btnNext");
+    const btnPlay = document.getElementById("btnPlay");
+    const songTitle = document.getElementById("songTitle");
+    const songArtist = document.getElementById("songArtist");
+    const songIndex = document.getElementById("songIndex");
+    const songTotal = document.getElementById("songTotal");
+    const curTime = document.getElementById("curTime");
+    const durTime = document.getElementById("durTime");
+    const prog = document.getElementById("prog");
+    const progFill = document.getElementById("progFill");
+
+    // ✅ Volume elements
+    const LS_VOL = "val_music_volume_v1";
+    const volRange = document.getElementById("volRange");
+    const volLabel = document.getElementById("volLabel");
+    const btnMute = document.getElementById("btnMute");
+    let lastNonZeroVol = 0.7;
+
+    function setVolume(v01, persist=true){
+      const v = Math.max(0, Math.min(1, v01));
+      audio.volume = v;
+      const pct = Math.round(v*100);
+      volLabel.textContent = pct + "%";
+      volRange.value = String(pct);
+      if(v > 0.001) lastNonZeroVol = v;
+      btnMute.textContent = (v === 0) ? "取消静音" : "静音";
+      if(persist) localStorage.setItem(LS_VOL, String(v));
+    }
+
+    function loadVolume(){
+      const raw = localStorage.getItem(LS_VOL);
+      if(raw === null || raw === undefined || raw === ""){
+        setVolume(0.7, false);
+        return;
+      }
+      const v = Number(raw);
+      if(!isFinite(v)) { setVolume(0.7, false); return; }
+      setVolume(v, false);
+    }
+
+    volRange.addEventListener("input", ()=>{
+      setVolume(Number(volRange.value)/100);
+    });
+    btnMute.addEventListener("click", ()=>{
+      if(audio.volume === 0){
+        setVolume(lastNonZeroVol || 0.7);
+      }else{
+        setVolume(0);
+      }
+    });
+
+    songTotal.textContent = PLAYLIST.length;
+
+    let songIdx = 0;
+    let userPaused = true;
+
+    function loadSong(i, autoplay=false){
+      const t = PLAYLIST[i];
+      songTitle.textContent = t.title;
+      songArtist.textContent = t.artist || "—";
+      songIndex.textContent = (i+1);
+
+      audio.src = t.file;
+      audio.load();
+
+      curTime.textContent = "00:00";
+      durTime.textContent = "00:00";
+      progFill.style.width = "0%";
+
+      if(autoplay){
+        audio.play().then(()=>{
+          userPaused = false;
+          btnPlay.textContent = "⏸ 暂停";
+        }).catch(()=>{
+          userPaused = true;
+          btnPlay.textContent = "▶ 播放";
+        });
+      }else{
+        userPaused = true;
+        btnPlay.textContent = "▶ 播放";
+      }
+    }
+
+    loadVolume();         // ✅ 先应用音量
+    loadSong(songIdx, false);
+
+    btnPrev.addEventListener("click", ()=>{
+      songIdx = (songIdx - 1 + PLAYLIST.length) % PLAYLIST.length;
+      loadSong(songIdx, !userPaused);
+    });
+    btnNext.addEventListener("click", ()=>{
+      songIdx = (songIdx + 1) % PLAYLIST.length;
+      loadSong(songIdx, !userPaused);
+    });
+    btnPlay.addEventListener("click", ()=>{
+      if(audio.paused){
+        audio.play().then(()=>{
+          userPaused = false;
+          btnPlay.textContent = "⏸ 暂停";
+        }).catch(()=>{
+          userPaused = true;
+          btnPlay.textContent = "▶ 播放";
+        });
+      }else{
+        audio.pause();
+        userPaused = true;
+        btnPlay.textContent = "▶ 播放";
+      }
+    });
+
+    audio.addEventListener("loadedmetadata", ()=>{ durTime.textContent = fmtTime(audio.duration); });
+    audio.addEventListener("timeupdate", ()=>{
+      curTime.textContent = fmtTime(audio.currentTime);
+      if(isFinite(audio.duration) && audio.duration > 0){
+        progFill.style.width = (audio.currentTime / audio.duration) * 100 + "%";
+      }
+    });
+    audio.addEventListener("ended", ()=>{
+      songIdx = (songIdx + 1) % PLAYLIST.length;
+      loadSong(songIdx, true);
+    });
+    prog.addEventListener("click", (e)=>{
+      const rect = prog.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const pct = x / rect.width;
+      if(isFinite(audio.duration) && audio.duration > 0){
+        audio.currentTime = audio.duration * pct;
+      }
+    });
+
+    // ===== Memory Mode =====
+    const memoryOverlay = document.getElementById("memoryOverlay");
+    const stageMedia = document.getElementById("stageMedia");
+    const memCapT = document.getElementById("memCapT");
+    const memCapS = document.getElementById("memCapS");
+    const memIdx = document.getElementById("memIdx");
+    const memTotal = document.getElementById("memTotal");
+    const memBar = document.getElementById("memBar");
+    const thumbGrid = document.getElementById("thumbGrid");
+    const nicknameOverlay = document.getElementById("nicknameOverlay");
+
+    let nicknameState = 0;
+    const nicknames = ["玲宝", "玲玲"];
+    function applyNickname(){ nicknameOverlay.textContent = nicknames[nicknameState % nicknames.length]; }
+    applyNickname();
+    document.getElementById("btnNick").addEventListener("click", ()=>{
+      nicknameState++;
+      applyNickname();
+    });
+
+    const MEM_ITEMS = [
+      { type:"image", src:"回忆1.jpg", title:"爱死漂亮的老婆了", note:"见一眼就会沦陷的那种" },
+      { type:"image", src:"回忆2.jpg", title:"想和老婆从视频走到线下", note:"想把这一刻存成永久收藏。" },
+      { type:"image", src:"回忆3.jpg", title:"想一直看着老婆", note:"你负责可爱，我负责心动。" },
+      { type:"image", src:"回忆4.jpg", title:"你一直都是那么漂亮，过去，当下以及未来", note:"虽然错过了过去的你，我更想牢牢抓住现在的你，走向我们的未来。" },
+      { type:"image", src:"回忆5.jpg", title:"那是第一次看你扎双马尾，让我发呆", note:"马尾如两束春风， 一束落在你耳畔， 一束住进我眼里。" },
+      { type:"image", src:"回忆6.jpg", title:"也是我第一次看你剪刘海", note:"一剪斜月落眉弯 ，半卷青丝半遮颜，我问春风借一句 ，说这是人间最可爱。" },
+
+      { type:"video", src:"回忆7.mp4", title:"老婆俏皮，眼神灵动", note:"想老婆了就看视频呢" },
+      { type:"video", src:"回忆8.mp4", title:"想喂老婆，照顾老婆", note:"喜欢老婆吃东西的样子——可爱。" },
+      { type:"video", src:"回忆9.mp4", title:"小猫媳妇，甚是喜欢。", note:"想天天听老婆在我耳边喵喵。" }
+    ];
+
+    let memI = 0;
+    let memPlaying = false;
+    let memTimer = null;
+    let memTickTimer = null;
+    const memSpeed = 6;
+    document.getElementById("memSpeedLabel").textContent = memSpeed;
+    memTotal.textContent = MEM_ITEMS.length;
+
+    function clearMemTimers(){
+      if(memTimer) clearInterval(memTimer);
+      if(memTickTimer) clearInterval(memTickTimer);
+      memTimer = null;
+      memTickTimer = null;
+    }
+    function setBar(pct){ memBar.style.width = Math.max(0, Math.min(100, pct)) + "%"; }
+
+    function thumbSrcFor(it){
+      if(it.type === "image") return it.src;
+      return "回忆1.jpg";
+    }
+
+    function renderThumbs(){
+      thumbGrid.innerHTML = "";
+      MEM_ITEMS.forEach((it, idx)=>{
+        const d = document.createElement("div");
+        d.className = "thumb";
+        d.innerHTML = `<img src="${thumbSrcFor(it)}" alt="thumb"><div class="tcap">${idx+1}. ${it.title}</div>`;
+        d.addEventListener("click", ()=>{
+          memI = idx;
+          showMemItem(memI);
+          if(memPlaying) restartMemProgress();
+        });
+        thumbGrid.appendChild(d);
+      });
+    }
+    renderThumbs();
+
+    function showMemItem(i){
+      const it = MEM_ITEMS[i];
+      memIdx.textContent = (i+1);
+
+      stageMedia.innerHTML = "";
+      let el;
+
+      if(it.type === "image"){
+        el = document.createElement("img");
+        el.src = it.src;
+        el.alt = it.title;
+      }else{
+        el = document.createElement("video");
+        el.src = it.src;
+        el.controls = true;
+        el.preload = "metadata";
+        el.playsInline = true;
+      }
+
+      el.classList.add("fadeIn");
+      stageMedia.appendChild(el);
+
+      memCapT.textContent = it.title;
+      memCapS.textContent = it.note || "";
+      setBar(0);
+    }
+
+    function openMemory(){
+      memoryOverlay.classList.add("show");
+      memPlaying = false;
+      document.getElementById("btnPlayMem").textContent = "▶ 自动播放";
+      clearMemTimers();
+      showMemItem(memI);
+      setBar(0);
+    }
+    function closeMemory(){
+      memoryOverlay.classList.remove("show");
+      memPlaying = false;
+      document.getElementById("btnPlayMem").textContent = "▶ 自动播放";
+      clearMemTimers();
+      setBar(0);
+    }
+
+    function nextMem(){ memI = (memI + 1) % MEM_ITEMS.length; showMemItem(memI); }
+    function prevMem(){ memI = (memI - 1 + MEM_ITEMS.length) % MEM_ITEMS.length; showMemItem(memI); }
+
+    document.getElementById("btnCloseMem").addEventListener("click", closeMemory);
+    document.getElementById("btnNextMem").addEventListener("click", ()=>{ nextMem(); if(memPlaying) restartMemProgress(); });
+    document.getElementById("btnPrevMem").addEventListener("click", ()=>{ prevMem(); if(memPlaying) restartMemProgress(); });
+    document.getElementById("btnOpenMemory").addEventListener("click", openMemory);
+    document.getElementById("btnOpenMemory2").addEventListener("click", openMemory);
+
+    function restartMemProgress(){
+      clearMemTimers();
+      const totalMs = memSpeed * 1000;
+      let start = Date.now();
+
+      memTickTimer = setInterval(()=>{
+        const t = Date.now() - start;
+        setBar((t/totalMs)*100);
+      }, 60);
+
+      memTimer = setInterval(()=>{
+        start = Date.now();
+        setBar(0);
+        nextMem();
+      }, totalMs);
+    }
+
+    function togglePlay(){
+      memPlaying = !memPlaying;
+      const btn = document.getElementById("btnPlayMem");
+      btn.textContent = memPlaying ? "⏸ 暂停播放" : "▶ 自动播放";
+
+      clearMemTimers();
+      if(!memPlaying){
+        setBar(0);
+        return;
+      }
+      restartMemProgress();
+    }
+    document.getElementById("btnPlayMem").addEventListener("click", togglePlay);
+
+    window.addEventListener("keydown", (e)=>{
+      if(e.key === "Escape" && memoryOverlay.classList.contains("show")){
+        closeMemory();
+      }
+    });
+
+    // Init memory stage
+    showMemItem(memI);
+  </script>
+</body>
+</html>
